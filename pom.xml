@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.dm.intellij</groupId>
+    <artifactId>maven-archetypes-catalog-plugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+
+    <name>Maven Archetypes Catalog Plugin for IntelliJ IDEA</name>
+    <description>
+        A plugin to enable IntelliJ IDEA to fetch external
+        Maven Archetype Catalog files
+    </description>
+
+    <organization>
+        <name>Dominik Marks</name>
+        <url>https://github.com/dmarks2</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Dominik Marks</name>
+            <id>d.marks</id>
+            <organization>${project.organization.name}</organization>
+            <organizationUrl>${project.organization.url}</organizationUrl>
+            <email>Dominik.Marks@gmx.de</email>
+        </developer>
+    </developers>
+
+    <!--
+    <scm>
+        <connection>${scm.server.stash.git.connection}/lr/liferay-idea-plugin.git</connection>
+        <developerConnection>${scm.server.stash.git.connection}/lr/liferay-idea-plugin.git</developerConnection>
+        <url>${scm.server.stash}/projects/LR/repos/liferay-idea-plugin</url>
+        <tag>HEAD</tag>
+    </scm>
+    -->
+
+    <properties>
+        <wagon.maven.plugin.version>1.0</wagon.maven.plugin.version>
+        <maven.xsds.url>http://maven.apache.org/xsd</maven.xsds.url>
+        <archetype.catalog.xsd.file>archetype-catalog-1.0.0.xsd</archetype.catalog.xsd.file>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+
+        <intellij.idea.version>14.1.5</intellij.idea.version>
+        <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.4</intellij.idea.home>
+
+        <vendor.email>Dominik.Marks@gmx.de</vendor.email>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.10</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>wagon-maven-plugin</artifactId>
+                <version>${wagon.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>download-archetype-catalog-xsd</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
+                        <configuration>
+                            <url>${maven.xsds.url}</url>
+                            <fromFile>${archetype.catalog.xsd.file}</fromFile>
+                            <toDir>${project.build.directory}/xsd</toDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.12.3</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>${project.build.directory}/xsd</schemaDirectory>
+                   <generatePackage>org.apache.maven.archetype.catalog</generatePackage>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>META-INF/plugin.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>META-INF/plugin.xml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <!-- C:\Program Files (x86)\JetBrains\IntelliJ IDEA 14.1.3\lib -->
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>idea</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\idea.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>openapi</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\openapi.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\annotations.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>util</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\util.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>extensions</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\extensions.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.plugins</groupId>
+            <artifactId>maven</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\plugins\maven\lib\maven.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.plugins</groupId>
+            <artifactId>maven-server-api</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\plugins\maven\lib\maven-server-api.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+</project>

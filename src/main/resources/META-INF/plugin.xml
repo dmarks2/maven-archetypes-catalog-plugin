@@ -1,0 +1,23 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin version="2">
+    <id>${project.artifactId}</id>
+    <name>${project.name}</name>
+    <version>${project.version}</version>
+    <vendor email="${vendor.email}" url="${project.organization.url}">${project.organization.name}</vendor>
+
+    <description><![CDATA[
+        <p>${project.description}<p>
+      ]]></description>
+
+    <change-notes><![CDATA[
+    ]]></change-notes>
+
+    <idea-version since-build="139"/>
+
+    <depends>org.jetbrains.idea.maven</depends>
+
+    <extensions defaultExtensionNs="org.jetbrains.idea.maven">
+        <archetypesProvider implementation="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogProvider"/>
+    </extensions>
+
+</idea-plugin>
