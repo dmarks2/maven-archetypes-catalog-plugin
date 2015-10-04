@@ -7,17 +7,30 @@
 
     <description><![CDATA[
         <p>${project.description}<p>
-      ]]></description>
+     ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.0</p>
+        <ul>
+          <li>First Release</li>
+        </ul>
     ]]></change-notes>
 
     <idea-version since-build="139"/>
 
     <depends>org.jetbrains.idea.maven</depends>
 
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogSettings"/>
+
+        <applicationConfigurable groupId="build.tools"
+                                 instance="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogConfigurable" id="reference.settings.project.maven.catalog"
+                                 key="maven.tab.catalog" bundle="PluginBundle"/> <!-- ??  -->
+    </extensions>
+
     <extensions defaultExtensionNs="org.jetbrains.idea.maven">
         <archetypesProvider implementation="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogProvider"/>
     </extensions>
+
 
 </idea-plugin>

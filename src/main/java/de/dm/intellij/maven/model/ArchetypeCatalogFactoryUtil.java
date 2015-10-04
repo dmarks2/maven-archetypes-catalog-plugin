@@ -1,13 +1,22 @@
 package de.dm.intellij.maven.model;
 
-import org.apache.maven.archetype.catalog.Archetype;
+import com.intellij.openapi.diagnostic.Logger;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.apache.maven.archetype.catalog.ObjectFactory;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
+import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
 import java.io.IOException;
 import java.net.URL;
 
@@ -15,6 +24,8 @@ import java.net.URL;
  * Created by Dominik on 03.10.2015.
  */
 public class ArchetypeCatalogFactoryUtil {
+
+    public static final String ARCHETYPE_CATALOG_SCHEMA_FILE = "archetype-catalog-1.0.0.xsd";
 
     public static ArchetypeCatalog getArchetypeCatalog(URL url) throws IOException, JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
@@ -24,12 +35,37 @@ public class ArchetypeCatalogFactoryUtil {
         return result.getValue();
     }
 
-    public static void main(String[] args) throws IOException, JAXBException {
-        URL url = new URL("https://repository.liferay.com/nexus/content/repositories/liferay-ce/archetype-catalog.xml");
+    public static boolean validateArchetypeCatalog(URL url) throws IOException, SAXException, JAXBException {
+        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Schema schema = sf.newSchema(new StreamSource(ArchetypeCatalogFactoryUtil.class.getResourceAsStream("/" + ARCHETYPE_CATALOG_SCHEMA_FILE)));
 
-        ArchetypeCatalog catalog = getArchetypeCatalog(url);
-        for (Archetype archetype : catalog.getArchetypes().getArchetype()) {
-            System.out.println(archetype.getGroupId() + ":" + archetype.getArtifactId() + ":" + archetype.getVersion() + " (" + archetype.getDescription() + ") - " + archetype.getRepository());
+        Source source = new StreamSource(url.openStream());
+        Validator validator = schema.newValidator();
+
+        MyErrorHandler myErrorHandler = new MyErrorHandler();
+        validator.setErrorHandler(myErrorHandler);
+        validator.validate(source);
+        return myErrorHandler.isValid;
+
+    }
+
+    private static class MyErrorHandler implements ErrorHandler {
+
+        protected boolean isValid = true;
+
+        @Override
+        public void warning(SAXParseException exception) throws SAXException {
+        }
+
+        @Override
+        public void error(SAXParseException exception) throws SAXException {
+            isValid = false;
+        }
+
+        @Override
+        public void fatalError(SAXParseException exception) throws SAXException {
+            isValid = false;
         }
     }
+
 }

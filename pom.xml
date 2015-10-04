@@ -10,10 +10,9 @@
 
     <packaging>jar</packaging>
 
-    <name>Maven Archetypes Catalog Plugin for IntelliJ IDEA</name>
+    <name>Maven Archetype Catalogs</name>
     <description>
-        A plugin to enable IntelliJ IDEA to fetch external
-        Maven Archetype Catalog files
+        A plugin to enable IntelliJ IDEA to fetch external Maven Archetype Catalog files.
     </description>
 
     <organization>
@@ -137,6 +136,13 @@
                 <excludes>
                     <exclude>META-INF/plugin.xml</exclude>
                 </excludes>
+            </resource>
+            <resource>
+                <directory>target/xsd</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>archetype-catalog-1.0.0.xsd</include>
+                </includes>
             </resource>
         </resources>
     </build>
