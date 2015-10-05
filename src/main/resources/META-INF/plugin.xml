@@ -1,6 +1,6 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin version="2">
-    <id>${project.artifactId}</id>
+    <id>${project.groupId}.${project.artifactId}</id>
     <name>${project.name}</name>
     <version>${project.version}</version>
     <vendor email="${vendor.email}" url="${project.organization.url}">${project.organization.name}</vendor>
@@ -20,12 +20,15 @@
 
     <depends>org.jetbrains.idea.maven</depends>
 
+    <extensionPoints>
+        <extensionPoint name="archetypeCatalogDefinition" interface="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogDefinition" />
+    </extensionPoints>
+
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogSettings"/>
-
         <applicationConfigurable groupId="build.tools"
                                  instance="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogConfigurable" id="reference.settings.project.maven.catalog"
-                                 key="maven.tab.catalog" bundle="PluginBundle"/> <!-- ??  -->
+                                 key="maven.tab.catalog" bundle="PluginBundle"/>
     </extensions>
 
     <extensions defaultExtensionNs="org.jetbrains.idea.maven">

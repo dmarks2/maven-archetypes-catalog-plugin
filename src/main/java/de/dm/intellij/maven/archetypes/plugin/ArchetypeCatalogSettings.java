@@ -7,7 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Dominik on 03.10.2015.
@@ -15,12 +17,12 @@ import java.util.List;
 @State(
         name = "ArchetypeCatalogSettings",
         storages = {
-                @Storage(id = "default", file = StoragePathMacros.APP_CONFIG + "/ArchetypeCatalogs.xml")
+                @Storage(id = "default", file = StoragePathMacros.APP_CONFIG + "/archetypeCatalogs.xml")
         }
 )
 public class ArchetypeCatalogSettings implements PersistentStateComponent<ArchetypeCatalogSettings> {
 
-    private List<String> archetypeCatalogs = new ArrayList<>();
+    private Set<String> archetypeCatalogs = new HashSet<>();
 
     @NotNull
     public static ArchetypeCatalogSettings getInstance() {
@@ -29,12 +31,12 @@ public class ArchetypeCatalogSettings implements PersistentStateComponent<Archet
 
     @NotNull
     @Property(surroundWithTag = false)
-    @AbstractCollection(surroundWithTag = false, elementTag = "archetype-catalogs", elementValueAttribute = "")
-    public List<String> getUrls() {
+    @AbstractCollection(surroundWithTag = false, elementTag = "archetype-catalog", elementValueAttribute = "")
+    public Set<String> getUrls() {
         return archetypeCatalogs;
     }
 
-    public void setUrls(@NotNull List<String> urls) {
+    public void setUrls(@NotNull Set<String> urls) {
         if (archetypeCatalogs != urls) {
             archetypeCatalogs.clear();
             archetypeCatalogs.addAll(urls);

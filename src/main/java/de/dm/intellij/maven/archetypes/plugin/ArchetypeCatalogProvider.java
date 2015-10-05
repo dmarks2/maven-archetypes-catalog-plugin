@@ -19,7 +19,8 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
     @Override
     public Collection<MavenArchetype> getArchetypes() {
         try {
-            List<String> urls = ArchetypeCatalogSettings.getInstance().getUrls();
+            Set<String> urls = ArchetypeCatalogSettings.getInstance().getUrls();
+            urls.addAll(ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs());
 
             Collection<MavenArchetype> result = new HashSet<>();
 

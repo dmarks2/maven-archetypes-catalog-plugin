@@ -18,6 +18,8 @@ import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * Created by Dominik on 03.10.2015.
@@ -90,13 +92,13 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     @Override
     public void apply() throws ConfigurationException {
-        ArchetypeCatalogSettings.getInstance().setUrls(listModel.getItems());
+        ArchetypeCatalogSettings.getInstance().setUrls(new HashSet<>(listModel.getItems()));
     }
 
     @Override
     public void reset() {
         listModel.removeAll();
-        listModel.add(ArchetypeCatalogSettings.getInstance().getUrls());
+        listModel.add(new ArrayList<String>(ArchetypeCatalogSettings.getInstance().getUrls()));
     }
 
     @Override
