@@ -4,14 +4,12 @@
 
     <groupId>de.dm.intellij</groupId>
     <artifactId>maven-archetypes-catalog-plugin</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
     <name>Maven Archetype Catalogs</name>
-    <description>
-        A plugin to enable IntelliJ IDEA to fetch external Maven Archetype Catalog files.
-    </description>
+    <description>A plugin to enable IntelliJ IDEA to fetch external Maven Archetype Catalog files.</description>
     <url>https://github.com/dmarks2/maven-archetypes-catalog-plugin</url>
 
     <organization>
@@ -146,6 +144,9 @@
             </plugin>
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <releaseProfiles>release</releaseProfiles>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -254,5 +255,38 @@
             <systemPath>${intellij.idea.home}\plugins\maven\lib\maven-server-api.jar</systemPath>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.jutzig</groupId>
+                        <artifactId>github-release-plugin</artifactId>
+                        <version>1.1.1</version>
+                        <executions>
+                            <execution>
+                                <id>release-to-github</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>release</goal>
+                                </goals>
+                                <configuration>
+                                    <releaseName>${project.version}</releaseName>
+                                    <tag>${project.version}</tag>
+                                    <fileSets>
+                                        <fileSet>
+                                            <include>${project.artifactId}*.zip</include>
+                                        </fileSet>
+                                    </fileSets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
