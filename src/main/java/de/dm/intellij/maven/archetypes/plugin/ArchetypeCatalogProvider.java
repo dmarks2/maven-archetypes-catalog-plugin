@@ -1,5 +1,9 @@
 package de.dm.intellij.maven.archetypes.plugin;
 
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
+import de.dm.intellij.maven.archetypes.Util;
 import de.dm.intellij.maven.model.ArchetypeCatalogFactoryUtil;
 import org.apache.maven.archetype.catalog.Archetype;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
@@ -9,6 +13,7 @@ import org.jetbrains.idea.maven.model.MavenArchetype;
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.*;
 
 /**
@@ -18,30 +23,32 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
 
     @Override
     public Collection<MavenArchetype> getArchetypes() {
-        try {
-            Set<String> urls = new HashSet<>();
-            urls.addAll(ArchetypeCatalogSettings.getInstance().getUrls());
-            urls.addAll(ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs());
+        Set<String> urls = new HashSet<>();
+        urls.addAll(ArchetypeCatalogSettings.getInstance().getUrls());
+        urls.addAll(ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs());
 
-            Collection<MavenArchetype> result = new HashSet<>();
+        Collection<MavenArchetype> result = new HashSet<>();
 
-            for (String url : urls) {
+        for (String url : urls) {
+            try {
 
                 ArchetypeCatalog catalog = ArchetypeCatalogFactoryUtil.getArchetypeCatalog(new URL(url));
 
                 for (Archetype archetype : catalog.getArchetypes().getArchetype()) {
                     result.add(new MavenArchetype(archetype.getGroupId(), archetype.getArtifactId(), archetype.getVersion(), archetype.getRepository(), archetype.getDescription()));
                 }
+            } catch (IOException e) {
+                handleException(e, url);
+            } catch (JAXBException e) {
+                handleException(e, url);
             }
-
-            return result;
-        } catch (IOException e) {
-            //??
-        } catch (JAXBException e) {
-            //??
         }
+        return result;
+    }
 
-        return Collections.emptyList();
+    private static void handleException(Exception e, String url) {
+        ArchetypeCatalogApplicationComponent.notify("Unable to load Archetype Catalog " + url + ": " + e.getMessage(), NotificationType.WARNING);
+        ArchetypeCatalogApplicationComponent.LOG.warn("Unable to load Archetype Catalog " + url + ": " + e.getMessage());
     }
 
 }

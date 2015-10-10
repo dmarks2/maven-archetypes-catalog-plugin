@@ -19,7 +19,8 @@
     <change-notes><![CDATA[
         <p>Version 1.0.1</p>
         <ul>
-            <li>Minor Fixes</li>
+            <li>Improved error handling</li>
+            <li>Minor Bugfixes</li>
             <li>Updated Instructions</li>
         </ul>
         <p>Version 1.0</p>
@@ -47,5 +48,10 @@
         <archetypesProvider implementation="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogProvider"/>
     </extensions>
 
+    <application-components>
+        <component>
+            <implementation-class>de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogApplicationComponent</implementation-class>
+        </component>
+    </application-components>
 
 </idea-plugin>
