@@ -3,6 +3,7 @@ package de.dm.intellij.maven.archetypes.plugin;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.InputValidator;
+import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.*;
@@ -58,7 +59,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
                         Messages.getQuestionIcon(),
                         value == null ? "http://" : value,
                         new ArchetypeRepositoryURLValidator());
-                if (StringUtil.isNotEmpty(text)) {
+                if (validateInput(text)) {
                     listModel.add(text);
                     lstCatalogs.setSelectedValue(text, true);
                 }
@@ -74,7 +75,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
                         Messages.getQuestionIcon(),
                         listModel.getElementAt(index),
                         new ArchetypeRepositoryURLValidator());
-                if (StringUtil.isNotEmpty(text)) {
+                if (validateInput(text)) {
                     listModel.setElementAt(text, index);
                 }
             }
@@ -83,6 +84,45 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         JPanel panel = decorator.createPanel();
         UIUtil.addBorder(panel, IdeBorderFactory.createTitledBorder("Archetype Catalogs"));
         return panel;
+    }
+
+    private boolean validateInput(String text) {
+        String errorText = null;
+        if (StringUtil.isNotEmpty(text)) {
+
+            try {
+                final URL url = new URL(text);
+                if (StringUtil.isNotEmpty(url.getHost())) {
+                    boolean result = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(url);
+                    if (result == false) {
+                        errorText = "URL does not point to a valid archetype-catalog.xml";
+                    } else {
+                        errorText = null;
+                    }
+                    return result;
+                } else {
+                    errorText = null;
+                    return false;
+                }
+            } catch (MalformedURLException e) {
+                errorText = "Invalid URL";
+                return false;
+            } catch (SAXException e) {
+                errorText = "URL does not point to a valid XML file";
+                return false;
+            } catch (JAXBException e) {
+                errorText = "URL does not point to a valid archetype-catalog.xml";
+                return false;
+            } catch (IOException e) {
+                errorText = "Error reading from given URL";
+                return false;
+            } finally {
+                if (errorText != null) {
+                    Messages.showErrorDialog(errorText, "Archetype Catalog URL");
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -106,31 +146,32 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     }
 
-    private static class ArchetypeRepositoryURLValidator implements InputValidator {
+    private static class ArchetypeRepositoryURLValidator implements InputValidatorEx {
+
+        private String errorText;
+
         @Override
-        public boolean checkInput(String inputString) {
+        public boolean canClose(String inputString) {
             try {
                 final URL url = new URL(inputString);
-                if (StringUtil.isNotEmpty(url.getHost())) {
-                    boolean result = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(url);
-                    return result;
-                }
-            }
-            catch (MalformedURLException e) {
-                return false;
-            } catch (SAXException e) {
-                return false;
-            } catch (JAXBException e) {
-                return false;
-            } catch (IOException e) {
-                return false;
+                boolean result = StringUtil.isNotEmpty(url.getHost());
+                errorText = null;
+                return result;
+            } catch (MalformedURLException e) {
+                errorText = "Invalid URL";
             }
             return false;
         }
 
         @Override
-        public boolean canClose(String inputString) {
-            return checkInput(inputString);
+        public boolean checkInput(String inputString) {
+            return canClose(inputString);
+        }
+
+        @Nullable
+        @Override
+        public String getErrorText(String s) {
+            return errorText;
         }
     }
 }

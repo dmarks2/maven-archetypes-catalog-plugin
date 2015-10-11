@@ -26,6 +26,19 @@ import java.net.URL;
 public class ArchetypeCatalogFactoryUtil {
 
     public static final String ARCHETYPE_CATALOG_SCHEMA_FILE = "archetype-catalog-1.0.0.xsd";
+    public static final SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+    public static Schema schema;
+    public static Validator validator;
+
+    static {
+        schema = null;
+        try {
+            schema = sf.newSchema(new StreamSource(ArchetypeCatalogFactoryUtil.class.getResourceAsStream("/" + ARCHETYPE_CATALOG_SCHEMA_FILE)));
+            validator = schema.newValidator();
+        } catch (SAXException e) {
+        }
+    }
+
 
     public static ArchetypeCatalog getArchetypeCatalog(URL url) throws IOException, JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
@@ -36,11 +49,7 @@ public class ArchetypeCatalogFactoryUtil {
     }
 
     public static boolean validateArchetypeCatalog(URL url) throws IOException, SAXException, JAXBException {
-        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema schema = sf.newSchema(new StreamSource(ArchetypeCatalogFactoryUtil.class.getResourceAsStream("/" + ARCHETYPE_CATALOG_SCHEMA_FILE)));
-
         Source source = new StreamSource(url.openStream());
-        Validator validator = schema.newValidator();
 
         MyErrorHandler myErrorHandler = new MyErrorHandler();
         validator.setErrorHandler(myErrorHandler);

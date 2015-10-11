@@ -176,6 +176,16 @@
                     </archive>
                 </configuration>
             </plugin>
+            <!--
+            <plugin>
+                <groupId>com.googlecode</groupId>
+                <artifactId>maven-idea-plugin</artifactId>
+                <version>1.6.1</version>
+                <configuration>
+                    <jdkName>IntelliJ IDEA Community Edition IC-141.2735.5</jdkName>
+                </configuration>
+            </plugin>
+            -->
         </plugins>
         <resources>
             <resource>
@@ -255,6 +265,13 @@
             <systemPath>${intellij.idea.home}\plugins\maven\lib\maven-server-api.jar</systemPath>
         </dependency>
     </dependencies>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-idea-plugin-repo</id>
+            <url>http://maven-idea-plugin.googlecode.com/svn/maven-repo</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <profiles>
         <profile>
