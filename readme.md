@@ -27,11 +27,18 @@ when creating new Maven projects or Maven modules based on Archetypes.
 Development
 -----------
 
-The project is build up using Maven. As the IntelliJ IDEA libraries are not present in the global
-Maven repository, the `pom.xml` defines relative paths into your IntelliJ IDEA installation.
+The project is build up using Maven. The IntelliJ IDEA libraries are not present in the global
+Maven repository, so they need to be installed in your local repository or in your company repository.
 
-You have to define the properties `intellij.idea.version` and `intellij.idea.home` to correspond to
-your local installation. Best practice would be to create a new maven profile with those settings.
+You can see the paths and the required maven instructions to install the artifacts in the `pom.xml`.
+
+To be able to debug the plugin, you need to install an additional IDEA plugin [Intellij plugin development with Maven](https://plugins.jetbrains.com/plugin/7127?pr=).
+This plugin tells IntelliJ IDEA to handle the module as a plugin module instead of a java module.
+
+Additionally you have to manually configure the path to the `plugin.xml` in the module settings. Best
+practice would be to point to `target/classes`.
+
+At last, you have to configure an IntelliJ IDEA SDK as the project SDK (instead of a java SDK).
 
 
 Extensions

@@ -59,6 +59,7 @@
         <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.4</intellij.idea.home>
 
         <vendor.email>Dominik.Marks@gmx.de</vendor.email>
+        <ij.plugin>true</ij.plugin>
     </properties>
 
     <build>
@@ -216,53 +217,81 @@
         <!-- C:\Program Files (x86)\JetBrains\IntelliJ IDEA 14.1.3\lib -->
 
         <dependency>
+            <!-- mvn install:install-file -Dfile=idea.jar -DgroupId=org.jetbrains -DartifactId=idea -Dversion=14.1.5 -Dpackaging=jar -->
             <groupId>org.jetbrains</groupId>
             <artifactId>idea</artifactId>
             <version>${intellij.idea.version}</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>${intellij.idea.home}\lib\idea.jar</systemPath>
+            -->
         </dependency>
         <dependency>
+            <!-- mvn install:install-file -Dfile=openapi.jar -DgroupId=org.jetbrains -DartifactId=openapi -Dversion=14.1.5 -Dpackaging=jar -->
             <groupId>org.jetbrains</groupId>
             <artifactId>openapi</artifactId>
             <version>${intellij.idea.version}</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>${intellij.idea.home}\lib\openapi.jar</systemPath>
+            -->
         </dependency>
+        <!-- mvn install:install-file -Dfile=annotations.jar -DgroupId=org.jetbrains -DartifactId=annotations -Dversion=14.1.5 -Dpackaging=jar -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>${intellij.idea.version}</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>${intellij.idea.home}\lib\annotations.jar</systemPath>
+            -->
         </dependency>
+        <!-- mvn install:install-file -Dfile=util.jar -DgroupId=org.jetbrains -DartifactId=util -Dversion=14.1.5 -Dpackaging=jar -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>util</artifactId>
             <version>${intellij.idea.version}</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>${intellij.idea.home}\lib\util.jar</systemPath>
+            -->
         </dependency>
+        <!-- mvn install:install-file -Dfile=extensions.jar -DgroupId=org.jetbrains -DartifactId=extensions -Dversion=14.1.5 -Dpackaging=jar -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>extensions</artifactId>
             <version>${intellij.idea.version}</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>${intellij.idea.home}\lib\extensions.jar</systemPath>
+            -->
         </dependency>
+        <!-- mvn install:install-file -Dfile=maven.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven -Dversion=14.1.5 -Dpackaging=jar -->
         <dependency>
             <groupId>org.jetbrains.plugins</groupId>
             <artifactId>maven</artifactId>
             <version>${intellij.idea.version}</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>${intellij.idea.home}\plugins\maven\lib\maven.jar</systemPath>
+            -->
         </dependency>
+        <!-- mvn install:install-file -Dfile=maven-server-api.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven-server-api -Dversion=14.1.5 -Dpackaging=jar -->
         <dependency>
             <groupId>org.jetbrains.plugins</groupId>
             <artifactId>maven-server-api</artifactId>
             <version>${intellij.idea.version}</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>${intellij.idea.home}\plugins\maven\lib\maven-server-api.jar</systemPath>
+            -->
         </dependency>
     </dependencies>
 
