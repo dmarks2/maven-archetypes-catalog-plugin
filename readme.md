@@ -38,7 +38,8 @@ This plugin tells IntelliJ IDEA to handle the module as a plugin module instead 
 Additionally you have to manually configure the path to the `plugin.xml` in the module settings. Best
 practice would be to point to `target/classes`.
 
-At last, you have to configure an IntelliJ IDEA SDK as the project SDK (instead of a java SDK).
+At last, you have to create an IntelliJ IDEA SDK and provide the name of the SDK in the property
+`intellij.idea.sdk.name` (probably in a maven profile).
 
 
 Extensions
