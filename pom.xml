@@ -4,7 +4,7 @@
 
     <groupId>de.dm.intellij</groupId>
     <artifactId>maven-archetypes-catalog-plugin</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
 
     <packaging>jar</packaging>
 
@@ -44,7 +44,7 @@
         <url>https://github.com/dmarks2/maven-archetypes-catalog-plugin</url>
         <connection>scm:git:git@github.com:dmarks2/maven-archetypes-catalog-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:dmarks2/maven-archetypes-catalog-plugin.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>maven-archetypes-catalog-plugin-1.0.2</tag>
   </scm>
 
     <properties>
