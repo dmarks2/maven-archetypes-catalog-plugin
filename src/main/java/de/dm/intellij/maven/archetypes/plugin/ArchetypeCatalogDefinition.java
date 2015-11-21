@@ -13,7 +13,7 @@ public abstract class ArchetypeCatalogDefinition {
     public static ExtensionPointName<ArchetypeCatalogDefinition> EXTENSION_POINT_NAME = ExtensionPointName.create("de.dm.intellij.maven-archetypes-catalog-plugin.archetypeCatalogDefinition");
 
     public static Set<String> getArchetypeCatalogDefinitionsURLs() {
-        Set<String> result = new HashSet<>();
+        Set<String> result = new HashSet<String>();
         ArchetypeCatalogDefinition[] archetypeCatalogDefinitions = (ArchetypeCatalogDefinition[])EXTENSION_POINT_NAME.getExtensions();
         for (ArchetypeCatalogDefinition archetypeCatalogDefinition : archetypeCatalogDefinitions) {
             result.addAll(archetypeCatalogDefinition.getArchetypeCatalogURLs());

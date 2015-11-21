@@ -1,9 +1,6 @@
 package de.dm.intellij.maven.archetypes.plugin;
 
-import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
-import com.intellij.notification.Notifications;
-import de.dm.intellij.maven.archetypes.Util;
 import de.dm.intellij.maven.model.ArchetypeCatalogFactoryUtil;
 import org.apache.maven.archetype.catalog.Archetype;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
@@ -13,8 +10,9 @@ import org.jetbrains.idea.maven.model.MavenArchetype;
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.net.URL;
-import java.net.UnknownHostException;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Dominik on 03.10.2015.
@@ -23,11 +21,11 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
 
     @Override
     public Collection<MavenArchetype> getArchetypes() {
-        Set<String> urls = new HashSet<>();
+        Set<String> urls = new HashSet<String>();
         urls.addAll(ArchetypeCatalogSettings.getInstance().getUrls());
         urls.addAll(ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs());
 
-        Collection<MavenArchetype> result = new HashSet<>();
+        Collection<MavenArchetype> result = new HashSet<MavenArchetype>();
 
         for (String url : urls) {
             try {

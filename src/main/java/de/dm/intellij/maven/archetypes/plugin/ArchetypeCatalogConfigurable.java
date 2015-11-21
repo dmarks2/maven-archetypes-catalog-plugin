@@ -132,7 +132,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     @Override
     public void apply() throws ConfigurationException {
-        ArchetypeCatalogSettings.getInstance().setUrls(new HashSet<>(listModel.getItems()));
+        ArchetypeCatalogSettings.getInstance().setUrls(new HashSet<String>(listModel.getItems()));
     }
 
     @Override

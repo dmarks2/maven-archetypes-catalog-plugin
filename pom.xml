@@ -53,7 +53,7 @@
         <archetype.catalog.xsd.file>archetype-catalog-1.0.0.xsd</archetype.catalog.xsd.file>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>1.6</java.version>
 
         <intellij.idea.version>14.1.5</intellij.idea.version>
         <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.4</intellij.idea.home>

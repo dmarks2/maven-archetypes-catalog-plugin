@@ -22,7 +22,7 @@ import java.util.Set;
 )
 public class ArchetypeCatalogSettings implements PersistentStateComponent<ArchetypeCatalogSettings> {
 
-    private Set<String> archetypeCatalogs = new HashSet<>();
+    private Set<String> archetypeCatalogs = new HashSet<String>();
 
     @NotNull
     public static ArchetypeCatalogSettings getInstance() {
