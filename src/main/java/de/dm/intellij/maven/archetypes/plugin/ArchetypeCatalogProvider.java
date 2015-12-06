@@ -6,6 +6,7 @@ import org.apache.maven.archetype.catalog.Archetype;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.jetbrains.idea.maven.indices.MavenArchetypesProvider;
 import org.jetbrains.idea.maven.model.MavenArchetype;
+import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
@@ -38,6 +39,8 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
             } catch (IOException e) {
                 handleException(e, url);
             } catch (JAXBException e) {
+                handleException(e, url);
+            } catch (SAXException e) {
                 handleException(e, url);
             }
         }
