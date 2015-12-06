@@ -17,6 +17,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.0.3</p>
+        <ul>
+            <li>Bugfix: Added support for Archetype Catalogs without a proper namespace declaration (e.g. from Central Maven Repository)</li>
+        </ul>
         <p>Version 1.0.2</p>
         <ul>
             <li>Bugfix: Make plugin compatible with Java 1.6 and above</li>
