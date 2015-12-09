@@ -17,6 +17,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.0.4</p>
+        <ul>
+            <li>Bugfix: Added support for IntelliJ proxy settings</li>
+        </ul>
         <p>Version 1.0.3</p>
         <ul>
             <li>Bugfix: Added support for Archetype Catalogs without a proper namespace declaration (e.g. from Central Maven Repository)</li>

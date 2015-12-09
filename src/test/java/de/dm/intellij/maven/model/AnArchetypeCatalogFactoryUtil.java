@@ -17,6 +17,7 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
+//TODO Fix tests because of dependency to HttpConfigurable
 public class AnArchetypeCatalogFactoryUtil {
 
     @Test

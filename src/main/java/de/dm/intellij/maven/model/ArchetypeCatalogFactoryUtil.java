@@ -1,5 +1,6 @@
 package de.dm.intellij.maven.model;
 
+import com.intellij.util.net.HttpConfigurable;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.apache.maven.archetype.catalog.ObjectFactory;
 import org.xml.sax.*;
@@ -18,6 +19,7 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Created by Dominik on 03.10.2015.
@@ -50,7 +52,8 @@ public class ArchetypeCatalogFactoryUtil {
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         xmlFilter.setContentHandler(unmarshaller.getUnmarshallerHandler());
 
-        InputSource inputSource = new InputSource(url.openStream());
+        URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());
+        InputSource inputSource = new InputSource(urlConnection.getInputStream());
         xmlFilter.parse(inputSource);
 
         JAXBElement<ArchetypeCatalog> result = (JAXBElement<ArchetypeCatalog>) unmarshaller.getUnmarshallerHandler().getResult();
@@ -58,7 +61,9 @@ public class ArchetypeCatalogFactoryUtil {
     }
 
     public static boolean validateArchetypeCatalog(URL url) throws IOException, SAXException, JAXBException {
-        InputSource inputSource = new InputSource(url.openStream());
+        URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());
+
+        InputSource inputSource = new InputSource(urlConnection.getInputStream());
         MyErrorHandler myErrorHandler = new MyErrorHandler();
         xmlFilter.setErrorHandler(myErrorHandler);
 

@@ -307,6 +307,22 @@
             -->
         </dependency>
 
+        <dependency>
+            <groupId>org.jetbrains.plugins</groupId>
+            <artifactId>trove4j</artifactId>
+            <version>${intellij.idea.version}</version>
+            <!-- <scope>provided</scope> -->
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\trove4j.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.6</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- JUnit -->
 
         <dependency>
