@@ -4,8 +4,11 @@ package de.dm.intellij.maven.model;
  * Created by Dominik on 06.12.2015.
  */
 
+import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
@@ -18,7 +21,8 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 //TODO Fix tests because of dependency to HttpConfigurable
-public class AnArchetypeCatalogFactoryUtil {
+@RunWith(JUnit4.class)
+public class AnArchetypeCatalogFactoryUtil extends LightCodeInsightFixtureTestCase {
 
     @Test
     public void should_return_false_on_validateArchetypeCatalog_for_non_xml_file() throws IOException, JAXBException, SAXException {
