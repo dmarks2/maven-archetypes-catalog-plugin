@@ -324,28 +324,16 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jetbrains.plugins</groupId>
-            <artifactId>trove4j</artifactId>
-            <version>${intellij.idea.version}</version>
-            <!-- <scope>provided</scope> -->
-            <scope>system</scope>
-            <systemPath>${intellij.idea.home}\lib\trove4j.jar</systemPath>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.3.6</version>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>1.5.1</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
-            <groupId>org.jetbrains.plugins</groupId>
-            <artifactId>idea_rt</artifactId>
-            <version>${intellij.idea.version}</version>
-            <!-- <scope>provided</scope> -->
-            <scope>system</scope>
-            <systemPath>${intellij.idea.home}\lib\idea_rt.jar</systemPath>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>1.5.1</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -355,6 +343,24 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.6</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mvn install:install-file -Dfile=trove4j.jar -DgroupId=org.jetbrains -DartifactId=trove4j -Dversion=14.1.5 -Dpackaging=jar -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>trove4j</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>test</scope>
+            <!--
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\trove4j.jar</systemPath>
+            -->
+        </dependency>
 
     </dependencies>
 

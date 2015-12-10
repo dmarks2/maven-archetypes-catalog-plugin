@@ -4,25 +4,42 @@ package de.dm.intellij.maven.model;
  * Created by Dominik on 06.12.2015.
  */
 
-import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
+import com.intellij.util.net.HttpConfigurable;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
+import org.jetbrains.annotations.NotNull;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLConnection;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
-//TODO Fix tests because of dependency to HttpConfigurable
-@RunWith(JUnit4.class)
-public class AnArchetypeCatalogFactoryUtil extends LightCodeInsightFixtureTestCase {
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(HttpConfigurable.class)
+public class AnArchetypeCatalogFactoryUtil {
+
+    @Before
+    public void setup() {
+        PowerMockito.mockStatic(HttpConfigurable.class);
+        Mockito.when(HttpConfigurable.getInstance()).thenReturn(
+                new HttpConfigurable() {
+                    @NotNull
+                    public URLConnection openConnection(@NotNull String location) throws IOException {
+                        return new URL(location).openConnection();
+                    }
+                }
+        );
+    }
 
     @Test
     public void should_return_false_on_validateArchetypeCatalog_for_non_xml_file() throws IOException, JAXBException, SAXException {
