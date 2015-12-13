@@ -171,12 +171,13 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return (! (((ArchetypeCatalogTableModel)listModel).getArchetypeCatalogModels()).equals(Util.getArchetypeCatalogModels()));
+        return ((ArchetypeCatalogTableModel)listModel).isModified();
     }
 
     @Override
     public void apply() throws ConfigurationException {
         Util.saveArchetypeCatalogModels(((ArchetypeCatalogTableModel)listModel).getArchetypeCatalogModels());
+        ((ArchetypeCatalogTableModel)listModel).setModified(false);
     }
 
     @Override
@@ -239,8 +240,11 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         private final String[] COLUMNS = { "URL", "Type" };
         private final List<ArchetypeCatalogModel> archetypeCatalogModels;
 
+        boolean modified;
+
         public ArchetypeCatalogTableModel(List<ArchetypeCatalogModel> archetypeCatalogModels) {
             this.archetypeCatalogModels = archetypeCatalogModels;
+            modified = false;
         }
 
         public List<ArchetypeCatalogModel> getArchetypeCatalogModels() {
@@ -251,6 +255,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
             this.archetypeCatalogModels.clear();
             this.archetypeCatalogModels.addAll(archetypeCatalogModels);
             fireTableDataChanged();
+            modified = false;
         }
 
         @Override
@@ -289,16 +294,26 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         public void setRow(int row, ArchetypeCatalogModel archetypeCatalogModel) {
             this.archetypeCatalogModels.set(row, archetypeCatalogModel);
             fireTableRowsUpdated(row, row);
+            modified = true;
         }
         public void addRow(ArchetypeCatalogModel archetypeCatalogModel) {
             this.archetypeCatalogModels.add(archetypeCatalogModel);
             fireTableRowsInserted(archetypeCatalogModels.size() - 1, archetypeCatalogModels.size());
+            modified = true;
         }
         public void removeRow(int row) {
             this.archetypeCatalogModels.remove(row);
             fireTableRowsDeleted(row, row);
+            modified = true;
         }
 
+        public boolean isModified() {
+            return modified;
+        }
+
+        public void setModified(boolean modified) {
+            this.modified = modified;
+        }
     }
 
     private class ArchetypeCatalogCellRenderer extends DefaultTableCellRenderer {

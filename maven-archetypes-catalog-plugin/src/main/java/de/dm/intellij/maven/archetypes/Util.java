@@ -1,9 +1,14 @@
 package de.dm.intellij.maven.archetypes;
 
+import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogDefinition;
 import de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogSettings;
 import de.dm.intellij.maven.model.ArchetypeCatalogModel;
 import de.dm.intellij.maven.model.ArchetypeCatalogType;
+import org.jetbrains.idea.maven.project.MavenProjectSettings;
+import org.jetbrains.idea.maven.utils.MavenUtil;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,6 +20,8 @@ import java.util.Set;
  */
 public class Util {
 
+    public static final Logger LOG = Logger.getInstance(Util.class);
+
     public static final String NOTIFICATION_GROUP_ID = "maven-archetypes-catalog-plugin";
     public static final String COMPONENT_NAME = "maven-archetype-catalog-plugin";
 
@@ -24,6 +31,7 @@ public class Util {
         Set<String> extensionUrls = ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs();
         result.addAll(getUrlsWithType(customUrls, ArchetypeCatalogType.CUSTOM));
         result.addAll(getUrlsWithType(extensionUrls, ArchetypeCatalogType.EXTENSION));
+
         return result;
     }
 

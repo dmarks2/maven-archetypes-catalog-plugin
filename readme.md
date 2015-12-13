@@ -47,3 +47,5 @@ Extensions
 
 This plugin provides an extension point `archetypeCatalogDefinition` in the namespace `de.dm.intellij.maven-archetypes-catalog-plugin`.
 Here you can add your custom Archetype Catalog files required for your IntelliJ plugins.
+
+The required Java Interface is defined in `maven-archetypes-catalog-openapi.jar`.
