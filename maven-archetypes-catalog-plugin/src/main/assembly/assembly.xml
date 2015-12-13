@@ -17,5 +17,13 @@
             </includes>
         </fileSet>
     </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/${project.artifactId}/lib</outputDirectory>
+            <includes>
+                <include>${project.groupId}:maven-archetypes-catalog-openapi:jar</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
 
 </assembly>
