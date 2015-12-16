@@ -332,7 +332,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
                     setBackground(JBColor.LIGHT_GRAY);
                 }
             }
-            if (archetypeCatalogModel.getType() == ArchetypeCatalogType.SYSTEM) {
+            if (archetypeCatalogModel.getType() == ArchetypeCatalogType.PROJECT) {
                 if (isSelected) {
                     setForeground(JBColor.LIGHT_GRAY);
                 } else {

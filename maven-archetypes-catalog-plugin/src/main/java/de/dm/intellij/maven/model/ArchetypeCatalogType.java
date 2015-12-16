@@ -7,7 +7,7 @@ public enum ArchetypeCatalogType {
 
     CUSTOM("custom"),
     EXTENSION("extension"),
-    SYSTEM("system");
+    PROJECT("project");
 
     private String displayName;
 

@@ -1,7 +1,10 @@
 package de.dm.intellij.maven.archetypes.plugin;
 
 import com.intellij.notification.NotificationType;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import de.dm.intellij.maven.model.ArchetypeCatalogFactoryUtil;
+import de.dm.intellij.maven.model.ArchetypeCatalogType;
 import org.apache.maven.archetype.catalog.Archetype;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.jetbrains.idea.maven.indices.MavenArchetypesProvider;
@@ -25,6 +28,16 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
         Set<String> urls = new HashSet<String>();
         urls.addAll(ArchetypeCatalogSettings.getInstance().getUrls());
         urls.addAll(ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs());
+
+        Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+        if (openProjects != null) {
+            for (Project project : openProjects) {
+                ArchetypeCatalogProjectComponent component = project.getComponent(ArchetypeCatalogProjectComponent.class);
+                if (component != null) {
+                    urls.addAll(component.getMavenArchetypeCatalogUrls());
+                }
+            }
+        }
 
         Collection<MavenArchetype> result = new HashSet<MavenArchetype>();
 

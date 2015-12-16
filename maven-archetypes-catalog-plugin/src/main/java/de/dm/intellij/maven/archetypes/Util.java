@@ -1,9 +1,11 @@
 package de.dm.intellij.maven.archetypes;
 
+import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogDefinition;
+import de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogProjectComponent;
 import de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogSettings;
 import de.dm.intellij.maven.model.ArchetypeCatalogModel;
 import de.dm.intellij.maven.model.ArchetypeCatalogType;
@@ -31,6 +33,15 @@ public class Util {
         Set<String> extensionUrls = ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs();
         result.addAll(getUrlsWithType(customUrls, ArchetypeCatalogType.CUSTOM));
         result.addAll(getUrlsWithType(extensionUrls, ArchetypeCatalogType.EXTENSION));
+        Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+        if (openProjects != null) {
+            for (Project project : openProjects) {
+                ArchetypeCatalogProjectComponent component = project.getComponent(ArchetypeCatalogProjectComponent.class);
+                if (component != null) {
+                    result.addAll(getUrlsWithType(component.getMavenArchetypeCatalogUrls(), ArchetypeCatalogType.PROJECT));
+                }
+            }
+        }
 
         return result;
     }
@@ -48,7 +59,12 @@ public class Util {
     private static List<ArchetypeCatalogModel> getUrlsWithType(Set<String> urls, ArchetypeCatalogType type) {
         List<ArchetypeCatalogModel> result = new ArrayList<ArchetypeCatalogModel>();
         for (String url : urls) {
-            result.add(new ArchetypeCatalogModel(url, type));
+            if (
+                    (url.toLowerCase().startsWith("http://")) ||
+                    (url.toLowerCase().startsWith("https://"))
+                ) {
+                result.add(new ArchetypeCatalogModel(url, type));
+            }
         }
         return result;
     }
