@@ -1,6 +1,5 @@
 package de.dm.intellij.maven.archetypes;
 
-import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
@@ -9,9 +8,12 @@ import de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogProjectComponent;
 import de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogSettings;
 import de.dm.intellij.maven.model.ArchetypeCatalogModel;
 import de.dm.intellij.maven.model.ArchetypeCatalogType;
-import org.jetbrains.idea.maven.project.MavenProjectSettings;
-import org.jetbrains.idea.maven.utils.MavenUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.idea.maven.project.MavenProjectsManager;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -31,14 +33,14 @@ public class Util {
         List<ArchetypeCatalogModel> result = new ArrayList<ArchetypeCatalogModel>();
         Set<String> customUrls = ArchetypeCatalogSettings.getInstance().getUrls();
         Set<String> extensionUrls = ArchetypeCatalogDefinition.getArchetypeCatalogDefinitionsURLs();
-        result.addAll(getUrlsWithType(customUrls, ArchetypeCatalogType.CUSTOM));
-        result.addAll(getUrlsWithType(extensionUrls, ArchetypeCatalogType.EXTENSION));
+        result.addAll(getUrlsWithType(customUrls, ArchetypeCatalogType.CUSTOM, null));
+        result.addAll(getUrlsWithType(extensionUrls, ArchetypeCatalogType.EXTENSION, null));
         Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
         if (openProjects != null) {
             for (Project project : openProjects) {
                 ArchetypeCatalogProjectComponent component = project.getComponent(ArchetypeCatalogProjectComponent.class);
                 if (component != null) {
-                    result.addAll(getUrlsWithType(component.getMavenArchetypeCatalogUrls(), ArchetypeCatalogType.PROJECT));
+                    result.addAll(getUrlsWithType(component.getMavenArchetypeCatalogUrls(), ArchetypeCatalogType.PROJECT, project));
                 }
             }
         }
@@ -56,16 +58,58 @@ public class Util {
         ArchetypeCatalogSettings.getInstance().setUrls(customUrls);
     }
 
-    private static List<ArchetypeCatalogModel> getUrlsWithType(Set<String> urls, ArchetypeCatalogType type) {
+    private static List<ArchetypeCatalogModel> getUrlsWithType(Set<String> urls, ArchetypeCatalogType type, @Nullable Project project) {
         List<ArchetypeCatalogModel> result = new ArrayList<ArchetypeCatalogModel>();
         for (String url : urls) {
-            if (
-                    (url.toLowerCase().startsWith("http://")) ||
-                    (url.toLowerCase().startsWith("https://"))
-                ) {
-                result.add(new ArchetypeCatalogModel(url, type));
+            try {
+                String resolvedUrl = resolveCatalogUrl(url, project);
+                if (resolvedUrl != null) {
+                    result.add(new ArchetypeCatalogModel(url, type));
+                }
+            } catch (MalformedURLException e) {
+                LOG.warn("URL is malformed: " + url + " (" + e.getMessage() + ")");
             }
         }
         return result;
     }
+
+    public static String resolveCatalogUrl(String catalogUrl, @Nullable Project project) throws MalformedURLException {
+        if (catalogUrl == null) {
+            return null;
+        }
+        if (
+                (catalogUrl.toLowerCase().startsWith("http://")) ||
+                (catalogUrl.toLowerCase().startsWith("https://"))
+                ) {
+            URL url = new URL(catalogUrl);
+            String filePart = url.getFile();
+            if ( (filePart == null) || (filePart.length() == 0) || ("/".equals(filePart)) ) {
+                url = new URL(url, "archetype-catalog.xml");
+            }
+
+            return url.toString();
+        } else if ("remote".equals(catalogUrl)) {
+            return "http://repo.maven.apache.org/maven2/archetype-catalog.xml";
+        } else if ("local".equals(catalogUrl)) {
+            if (project != null) {
+                MavenProjectsManager instance = MavenProjectsManager.getInstance(project);
+                File mavenHome = instance.getLocalRepository().getParentFile();
+                File archetypeCatalogFile = new File(mavenHome, "archetype-catalog.xml");
+                if (archetypeCatalogFile.exists()) {
+                    return archetypeCatalogFile.toURI().toURL().toString();
+                }
+            }
+        } else if (catalogUrl.toLowerCase().startsWith("file:/")) {
+            URL url = new URL(catalogUrl);
+            String filePart = url.getFile();
+            if ( (filePart == null) || (filePart.length() == 0) || ("/".equals(filePart)) ) {
+                url = new URL(url, "archetype-catalog.xml");
+            }
+
+            return url.toString();
+        }
+
+        return null;
+    }
+
 }

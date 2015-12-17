@@ -1,9 +1,12 @@
 package de.dm.intellij.maven.archetypes.plugin;
 
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
+import de.dm.intellij.maven.archetypes.Util;
 import org.jetbrains.annotations.NotNull;
 
+import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,9 +16,11 @@ import java.util.Set;
  */
 public class ArchetypeCatalogProjectComponent implements ProjectComponent {
 
+    public static final Logger LOG = Logger.getInstance(ArchetypeCatalogProjectComponent.class);
+
     private Project project;
 
-    private String mavenArchetypeCatalogs;
+    private Set<String> mavenArchetypeCatalogs = new HashSet<String>();
 
     public ArchetypeCatalogProjectComponent(Project project) {
         this.project = project;
@@ -55,28 +60,20 @@ public class ArchetypeCatalogProjectComponent implements ProjectComponent {
         this.project = project;
     }
 
-    public String getMavenArchetypeCatalogs() {
-        return mavenArchetypeCatalogs;
-    }
+    public void addMavenArchetypeCatalogs(String mavenArchetypeCatalogs) {
+        String[] catalogs = mavenArchetypeCatalogs.split(",");
+        for (String catalogUrl : catalogs) {
+            try {
+                String url = Util.resolveCatalogUrl(catalogUrl, project);
+                this.mavenArchetypeCatalogs.add(url);
+            } catch (MalformedURLException e) {
+                LOG.warn("Malformed URL " + catalogUrl + " (" + e.getMessage() + ")");
+            }
 
-    public void setMavenArchetypeCatalogs(String mavenArchetypeCatalogs) {
-        this.mavenArchetypeCatalogs = mavenArchetypeCatalogs;
+        }
     }
 
     public Set<String> getMavenArchetypeCatalogUrls() {
-        Set<String> result = new HashSet<String>();
-        if (mavenArchetypeCatalogs != null) {
-            String[] catalogs = mavenArchetypeCatalogs.split(",");
-            //TODO: only http / https urls supported (no local, remote, file://)
-            for (String url : catalogs) {
-                if (
-                        (url.toLowerCase().startsWith("http://")) ||
-                        (url.toLowerCase().startsWith("https://"))
-                ) {
-                    result.add(url);
-                }
-            }
-        }
-        return result;
+        return mavenArchetypeCatalogs;
     }
 }

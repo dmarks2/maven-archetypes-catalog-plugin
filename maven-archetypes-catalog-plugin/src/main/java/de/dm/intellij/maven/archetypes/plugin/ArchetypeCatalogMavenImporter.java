@@ -41,22 +41,26 @@ public class ArchetypeCatalogMavenImporter extends MavenImporter {
     @Override
     public void process(MavenModifiableModelsProvider mavenModifiableModelsProvider, Module module, MavenRootModelAdapter mavenRootModelAdapter, MavenProjectsTree mavenProjectsTree, MavenProject mavenProject, MavenProjectChanges mavenProjectChanges, Map<MavenProject, String> map, List<MavenProjectsProcessorTask> list) {
         MavenPlugin plugin = mavenProject.findPlugin(myPluginGroupID, myPluginArtifactID);
-        LOG.info("plugin = "+ plugin);
+
         if (plugin != null) {
             Element config = plugin.getConfigurationElement();
-            LOG.info("config = "+ config);
             if (config != null) {
                 Element child = config.getChild(ARCHETYPE_CATALOG);
                 String archetypeCatalog = child.getText();
 
-                LOG.info("archetypeCatalog = " + archetypeCatalog);
-
-                //TODO merge from different modules?
                 ArchetypeCatalogProjectComponent component = module.getProject().getComponent(ArchetypeCatalogProjectComponent.class);
                 if (component != null) {
-                    component.setMavenArchetypeCatalogs(archetypeCatalog);
+                    component.addMavenArchetypeCatalogs(archetypeCatalog);
                 }
 
+            }
+        } else {
+            String archetypeCatalog = mavenProject.getProperties().getProperty(ARCHETYPE_CATALOG);
+            if ( (archetypeCatalog != null) && (archetypeCatalog.length() > 0) ) {
+                ArchetypeCatalogProjectComponent component = module.getProject().getComponent(ArchetypeCatalogProjectComponent.class);
+                if (component != null) {
+                    component.addMavenArchetypeCatalogs(archetypeCatalog);
+                }
             }
         }
     }
@@ -64,7 +68,9 @@ public class ArchetypeCatalogMavenImporter extends MavenImporter {
     @Override
     public boolean isApplicable(MavenProject mavenProject) {
         boolean applicable = super.isApplicable(mavenProject);
-        LOG.info("isApplicable: " + applicable);
+        if (! applicable) {
+            applicable = mavenProject.getProperties().containsKey(ARCHETYPE_CATALOG);
+        }
         return applicable;
     }
 
