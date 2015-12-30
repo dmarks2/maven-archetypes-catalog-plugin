@@ -102,7 +102,7 @@ public class Util {
         } else if (catalogUrl.toLowerCase().startsWith("file:/")) {
             URL url = new URL(catalogUrl);
             String filePart = url.getFile();
-            if ( (filePart == null) || (filePart.length() == 0) || ("/".equals(filePart)) ) {
+            if ( (filePart == null) || (filePart.length() == 0) || ("/".equals(filePart)) || (filePart.endsWith("/")) ) {
                 url = new URL(url, "archetype-catalog.xml");
             }
 

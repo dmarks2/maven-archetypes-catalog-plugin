@@ -10,6 +10,7 @@ a list of external Maven Archetype Catalog files. Those files are
 fetched and the containing Maven Archetypes are added to the available
 archetypes in IntelliJ IDEA.
 
+
 Usage
 -----
 
@@ -18,11 +19,15 @@ Install the plugin.
 It adds a new entry **Maven Archetype Catalogs** to the Settings menu at
 **File** - **Settings** - **Build, Execution and Deployment** - **Build tools**.
 
-Here you can add additional URLs pointing to external archetype-catalog.xml files.
+Here you can add additional URLs or choose local files pointing to external archetype-catalog.xml files.
 
 After adding those Catalog files the Archetypes present in these files will be available
 when creating new Maven projects or Maven modules based on Archetypes.
- 
+
+When you define a property **archetypeCatalog** in your `pom.xml` or declare a configuration for the org.apache.maven.plugins:maven-archetype-plugin in your `pom.xml`,
+those settings will be automatically imported. The property **archetypeCatalog** supports `local`, `remote`, file- or http-based URLs.
+See [http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html#archetypeCatalog](http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html#archetypeCatalog) for additional information.
+
 
 Development
 -----------

@@ -1,5 +1,6 @@
 package de.dm.intellij.maven.archetypes.plugin;
 
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.InputValidatorEx;
@@ -65,17 +66,31 @@ public class ArchetypeCatalogConfigurable implements Configurable {
             @Override
             public void run(AnActionButton anActionButton) {
                 final ArchetypeCatalogModel value = getArchetypeCatalogModel(lstCatalogs.getSelectedRow());
-                final String text = Messages.showInputDialog(
+
+                FileChooserDescriptor descriptor = new ArchetypeCatalogFileChooserDescriptor();
+
+                descriptor.setDescription("Archetype Catalog URL");
+
+                SelectArchetypeCatalogDialog dialog = new SelectArchetypeCatalogDialog(null, descriptor, "Add Archetype Catalog URL");
+
+                dialog.show();
+                if(dialog.isOK()) {
+                    String text = dialog.getUrl();
+
+                    if (validateInput(text)) {
+                        ArchetypeCatalogModel archetypeCatalogModel = new ArchetypeCatalogModel(text, ArchetypeCatalogType.CUSTOM);
+                        addRow(archetypeCatalogModel);
+                        lstCatalogs.getSelectionModel().setSelectionInterval(listModel.getRowCount(), listModel.getRowCount());
+                    }
+
+                }
+
+/*                final String text = Messages.showInputDialog(
                         "Archetype Catalog URL",
                         "Add Archetype Catalog URL",
                         Messages.getQuestionIcon(),
                         value == null ? "http://" : value.getUrl(),
-                        new ArchetypeRepositoryURLValidator());
-                if (validateInput(text)) {
-                    ArchetypeCatalogModel archetypeCatalogModel = new ArchetypeCatalogModel(text, ArchetypeCatalogType.CUSTOM);
-                    addRow(archetypeCatalogModel);
-                    lstCatalogs.getSelectionModel().setSelectionInterval(listModel.getRowCount(), listModel.getRowCount());
-                }
+                        new ArchetypeRepositoryURLValidator()); */
             }
         });
         final AnActionButtonRunnable editAction = new AnActionButtonRunnable() {
@@ -83,15 +98,31 @@ public class ArchetypeCatalogConfigurable implements Configurable {
             public void run(AnActionButton anActionButton) {
                 final int index = lstCatalogs.getSelectedRow();
                 ArchetypeCatalogModel archetypeCatalogModel = getArchetypeCatalogModel(index);
-                final String text = Messages.showInputDialog(
+
+                FileChooserDescriptor descriptor = new ArchetypeCatalogFileChooserDescriptor();
+
+                descriptor.setDescription("Archetype Catalog URL");
+
+                SelectArchetypeCatalogDialog dialog = new SelectArchetypeCatalogDialog(null, descriptor, "Edit Archetype Catalog URL");
+                dialog.setUrl(archetypeCatalogModel.getUrl());
+
+                dialog.show();
+                if(dialog.isOK()) {
+                    String text = dialog.getUrl();
+
+                    if (validateInput(text)) {
+                        archetypeCatalogModel.setUrl(dialog.getUrl());
+                        updateRow(index, archetypeCatalogModel);
+                    }
+                }
+
+                /*final String text = Messages.showInputDialog(
                         "Archetype Catalog URL",
                         "Edit Archetype Catalog URL",
                         Messages.getQuestionIcon(),
                         archetypeCatalogModel.getUrl(),
                         new ArchetypeRepositoryURLValidator());
-                if (validateInput(text)) {
-                    updateRow(index, archetypeCatalogModel);
-                }
+                */
             }
         };
         decorator.setEditAction(editAction);
@@ -136,18 +167,13 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
             try {
                 final URL url = new URL(text);
-                if (StringUtil.isNotEmpty(url.getHost())) {
-                    boolean result = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(url);
-                    if (result == false) {
-                        errorText = "URL does not point to a valid archetype-catalog.xml";
-                    } else {
-                        errorText = null;
-                    }
-                    return result;
+                boolean result = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(url);
+                if (result == false) {
+                    errorText = "URL does not point to a valid archetype-catalog.xml";
                 } else {
                     errorText = null;
-                    return false;
                 }
+                return result;
             } catch (MalformedURLException e) {
                 errorText = "Invalid URL";
                 return false;
@@ -298,7 +324,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         }
         public void addRow(ArchetypeCatalogModel archetypeCatalogModel) {
             this.archetypeCatalogModels.add(archetypeCatalogModel);
-            fireTableRowsInserted(archetypeCatalogModels.size() - 1, archetypeCatalogModels.size());
+            fireTableRowsInserted(archetypeCatalogModels.size() - 1, archetypeCatalogModels.size() - 1);
             modified = true;
         }
         public void removeRow(int row) {

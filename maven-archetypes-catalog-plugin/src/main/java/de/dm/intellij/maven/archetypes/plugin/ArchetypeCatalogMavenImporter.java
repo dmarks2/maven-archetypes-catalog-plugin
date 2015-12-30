@@ -88,5 +88,8 @@ public class ArchetypeCatalogMavenImporter extends MavenImporter {
         result.add(MavenConstants.TYPE_POM);
     }
 
-
+    @Override
+    public boolean processChangedModulesOnly() {
+        return false;
+    }
 }

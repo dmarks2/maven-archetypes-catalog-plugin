@@ -14,6 +14,9 @@
         <p>It adds a new entry <em>Maven Archetype Catalogs</em> to the Settings menu at <em>File</em> - <em>Settings</em> - <em>Build, Execution and Deployment</em> - <em>Build tools</em>.</p>
         <p>Here you can add additional URLs pointing to external archetype-catalog.xml files.</p>
         <p>After adding those Catalog files the Archetypes present in these files will be available when creating new Maven projects or Maven modules based on Archetypes.</p>
+        <p><b>Importing from pom.xml</b></p>
+        <p>If you define Maven Archetype Catalogs in your pom.xml file, those settings will be automatically imported.</p>
+        <p>You have to either define the property <em>archetypeCatalog</em> in your pom.xml or add a configuration for the plugin <em>org.apache.maven.plugins:maven-archetype-plugin</em> and configure the <em>archetypeCatalog</em> there.</p>
      ]]></description>
 
     <change-notes><![CDATA[
@@ -22,7 +25,8 @@
             <li>Feature: Improved GUI</li>
             <li>Bugfix: List was shown as modified even if no modifications were made</li>
             <li>Feature: Improved extensibility by providing the extension point in a separate JAR file</li>
-            <li>Feature: Read Archetype Catalogs from maven-archetype-plugin from pom.xml</li>
+            <li>Feature: Read Archetype Catalogs from maven-archetype-plugin or archetypeCatalog property from pom.xml</li>
+            <li>Feature: Added support for file based archetype-catalog.xml files</li>
         </ul>
         <p>Version 1.0.4</p>
         <ul>

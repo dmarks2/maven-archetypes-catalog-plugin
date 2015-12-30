@@ -28,6 +28,11 @@ import static org.junit.Assert.assertThat;
 @PrepareForTest(HttpConfigurable.class)
 public class AnArchetypeCatalogFactoryUtil {
 
+    private static final URL SAMPLE_TXT = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/sample.txt");
+    private static final URL ARBITRARY_XML = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/arbitrary.xml");
+    private static final URL XML_WITH_NAMESPACE = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/liferay/archetype-catalog.xml");
+    private static final URL XML_WITHOUT_NAMESPACE = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/maven2/archetype-catalog.xml");
+
     @Before
     public void setup() {
         PowerMockito.mockStatic(HttpConfigurable.class);
@@ -43,37 +48,37 @@ public class AnArchetypeCatalogFactoryUtil {
 
     @Test
     public void should_return_false_on_validateArchetypeCatalog_for_non_xml_file() throws IOException, JAXBException, SAXException {
-        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(new URL("http://www.google.de"));
+        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(SAMPLE_TXT);
         assertThat(valid, equalTo(false));
     }
 
     @Test
     public void should_return_false_on_validateArchetypeCatalog_for_invalid_xml_file() throws IOException, JAXBException, SAXException {
-        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(new URL("http://www.w3schools.com/xml/note.xml"));
+        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(ARBITRARY_XML);
         assertThat(valid, equalTo(false));
     }
 
     @Test
     public void should_return_true_on_validateArchetypeCatalog_for_valid_xml_file_with_namespace() throws IOException, JAXBException, SAXException {
-        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(new URL("https://repository.liferay.com/nexus/content/repositories/liferay-ce/archetype-catalog.xml"));
+        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(XML_WITH_NAMESPACE);
         assertThat(valid, equalTo(true));
     }
 
     @Test
     public void should_return_true_on_validateArchetypeCatalog_for_valid_xml_file_without_namespace() throws IOException, JAXBException, SAXException {
-        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(new URL("http://repo1.maven.org/maven2/archetype-catalog.xml"));
+        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(XML_WITHOUT_NAMESPACE);
         assertThat(valid, equalTo(true));
     }
 
     @Test
     public void should_return_valid_ArchetypeCatalog_on_getArchetypeCatalog_for_valid_xml_file_with_namespace() throws IOException, JAXBException, SAXException {
-        ArchetypeCatalog archetypeCatalog = ArchetypeCatalogFactoryUtil.getArchetypeCatalog(new URL("https://repository.liferay.com/nexus/content/repositories/liferay-ce/archetype-catalog.xml"));
+        ArchetypeCatalog archetypeCatalog = ArchetypeCatalogFactoryUtil.getArchetypeCatalog(XML_WITH_NAMESPACE);
         assertThat(archetypeCatalog, not(nullValue()));
     }
 
     @Test
     public void should_return_valid_ArchetypeCatalog_on_getArchetypeCatalog_for_valid_xml_file_without_namespace() throws IOException, JAXBException, SAXException {
-        ArchetypeCatalog archetypeCatalog = ArchetypeCatalogFactoryUtil.getArchetypeCatalog(new URL("http://repo1.maven.org/maven2/archetype-catalog.xml"));
+        ArchetypeCatalog archetypeCatalog = ArchetypeCatalogFactoryUtil.getArchetypeCatalog(XML_WITHOUT_NAMESPACE);
         assertThat(archetypeCatalog, not(nullValue()));
     }
 
