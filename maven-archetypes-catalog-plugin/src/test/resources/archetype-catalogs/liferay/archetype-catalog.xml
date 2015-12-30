@@ -1,0 +1,2625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-catalog xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0 http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <archetypes>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-m5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-m4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-m3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-m6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-m7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-a1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-a2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-a3</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-a4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-a5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-b1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-m2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>7.0.0-m1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.2</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.9</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.8</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.7</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.6</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.5</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.12</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.11</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.10</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.0-ga1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.1.30.1</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.13</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.14</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.10.15</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-ext-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay extensions.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-icefaces-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay ICEfaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-layouttpl-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay layout templates.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-hook-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay hooks.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-liferay-faces-alloy-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Faces Alloy portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-primefaces-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay PrimeFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-richfaces-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay RichFaces portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-jsf-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay JSF portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-portlet-spring-mvc-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Spring MVC portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-servicebuilder-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay Service Builder portlets.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-theme-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay themes.</description>
+    </archetype>
+    <archetype>
+      <groupId>com.liferay.maven.archetypes</groupId>
+      <artifactId>liferay-web-archetype</artifactId>
+      <version>6.2.4</version>
+      <repository>https://repository.liferay.com/nexus/content/groups/liferay-ce</repository>
+      <description>Provides an archetype to create Liferay webs.</description>
+    </archetype>
+  </archetypes>
+</archetype-catalog>

@@ -28,7 +28,7 @@ import static org.junit.Assert.assertThat;
 @PrepareForTest(HttpConfigurable.class)
 public class AnArchetypeCatalogFactoryUtil {
 
-    private static final URL SAMPLE_TXT = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/sample.txt");
+    private static final URL ARBITRARY_TXT = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/arbitrary.txt");
     private static final URL ARBITRARY_XML = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/arbitrary.xml");
     private static final URL XML_WITH_NAMESPACE = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/liferay/archetype-catalog.xml");
     private static final URL XML_WITHOUT_NAMESPACE = Thread.currentThread().getContextClassLoader().getResource("archetype-catalogs/maven2/archetype-catalog.xml");
@@ -48,7 +48,7 @@ public class AnArchetypeCatalogFactoryUtil {
 
     @Test
     public void should_return_false_on_validateArchetypeCatalog_for_non_xml_file() throws IOException, JAXBException, SAXException {
-        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(SAMPLE_TXT);
+        boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(ARBITRARY_TXT);
         assertThat(valid, equalTo(false));
     }
 
