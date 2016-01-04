@@ -1,6 +1,7 @@
 package de.dm.intellij.maven.archetypes.plugin;
 
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.util.Condition;
 import com.intellij.openapi.vfs.VirtualFile;
 
 /**
@@ -10,10 +11,13 @@ public class ArchetypeCatalogFileChooserDescriptor extends FileChooserDescriptor
 
     public ArchetypeCatalogFileChooserDescriptor() {
         super(true, false, false, false, false, false);
+
+        withFileFilter(new Condition<VirtualFile>() {
+            @Override
+            public boolean value(VirtualFile virtualFile) {
+                return "archetype-catalog.xml".equals(virtualFile.getName());
+            }
+        });
     }
 
-    @Override
-    public boolean isFileSelectable(VirtualFile file) {
-        return "archetype-catalog.xml".equals(file.getName());
-    }
 }

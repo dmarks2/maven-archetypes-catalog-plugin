@@ -3,6 +3,9 @@ package de.dm.intellij.maven.archetypes.plugin;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.text.StringUtil;
@@ -65,8 +68,6 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         decorator.setAddAction(new AnActionButtonRunnable() {
             @Override
             public void run(AnActionButton anActionButton) {
-                final ArchetypeCatalogModel value = getArchetypeCatalogModel(lstCatalogs.getSelectedRow());
-
                 FileChooserDescriptor descriptor = new ArchetypeCatalogFileChooserDescriptor();
 
                 descriptor.setDescription("Archetype Catalog URL");
@@ -74,55 +75,69 @@ public class ArchetypeCatalogConfigurable implements Configurable {
                 SelectArchetypeCatalogDialog dialog = new SelectArchetypeCatalogDialog(null, descriptor, "Add Archetype Catalog URL");
 
                 dialog.show();
-                if(dialog.isOK()) {
-                    String text = dialog.getUrl();
+                if (dialog.isOK()) {
+                    final String text = dialog.getUrl();
 
-                    if (validateInput(text)) {
-                        ArchetypeCatalogModel archetypeCatalogModel = new ArchetypeCatalogModel(text, ArchetypeCatalogType.CUSTOM);
-                        addRow(archetypeCatalogModel);
-                        lstCatalogs.getSelectionModel().setSelectionInterval(listModel.getRowCount(), listModel.getRowCount());
-                    }
+                    ProgressManager.getInstance().run(new Task.Modal(null, "Reading Archetype Catalog", true) {
 
+                        private boolean isValid;
+
+                        @Override
+                        public void run(ProgressIndicator progressIndicator) {
+                            progressIndicator.setIndeterminate(true);
+                            isValid = validateInput(text);
+                        }
+
+                        @Override
+                        public void onSuccess() {
+                            if (isValid) {
+                                ArchetypeCatalogModel archetypeCatalogModel = new ArchetypeCatalogModel(text, ArchetypeCatalogType.CUSTOM);
+                                addRow(archetypeCatalogModel);
+                                lstCatalogs.getSelectionModel().setSelectionInterval(listModel.getRowCount() - 1, listModel.getRowCount() - 1);
+                            }
+                        }
+                    });
                 }
-
-/*                final String text = Messages.showInputDialog(
-                        "Archetype Catalog URL",
-                        "Add Archetype Catalog URL",
-                        Messages.getQuestionIcon(),
-                        value == null ? "http://" : value.getUrl(),
-                        new ArchetypeRepositoryURLValidator()); */
             }
         });
         final AnActionButtonRunnable editAction = new AnActionButtonRunnable() {
             @Override
             public void run(AnActionButton anActionButton) {
                 final int index = lstCatalogs.getSelectedRow();
-                ArchetypeCatalogModel archetypeCatalogModel = getArchetypeCatalogModel(index);
+                final ArchetypeCatalogModel archetypeCatalogModel = getArchetypeCatalogModel(index);
+                if (ArchetypeCatalogType.CUSTOM.equals(archetypeCatalogModel.getType())) {
 
-                FileChooserDescriptor descriptor = new ArchetypeCatalogFileChooserDescriptor();
+                    FileChooserDescriptor descriptor = new ArchetypeCatalogFileChooserDescriptor();
 
-                descriptor.setDescription("Archetype Catalog URL");
+                    descriptor.setDescription("Archetype Catalog URL");
 
-                SelectArchetypeCatalogDialog dialog = new SelectArchetypeCatalogDialog(null, descriptor, "Edit Archetype Catalog URL");
-                dialog.setUrl(archetypeCatalogModel.getUrl());
+                    final SelectArchetypeCatalogDialog dialog = new SelectArchetypeCatalogDialog(null, descriptor, "Edit Archetype Catalog URL");
+                    dialog.setUrl(archetypeCatalogModel.getUrl());
 
-                dialog.show();
-                if(dialog.isOK()) {
-                    String text = dialog.getUrl();
+                    dialog.show();
+                    if (dialog.isOK()) {
+                        final String text = dialog.getUrl();
 
-                    if (validateInput(text)) {
-                        archetypeCatalogModel.setUrl(dialog.getUrl());
-                        updateRow(index, archetypeCatalogModel);
+                        ProgressManager.getInstance().run(new Task.Modal(null, "Reading Archetype Catalog", true) {
+
+                            private boolean isValid;
+
+                            @Override
+                            public void run(ProgressIndicator progressIndicator) {
+                                progressIndicator.setIndeterminate(true);
+                                isValid = validateInput(text);
+                            }
+
+                            @Override
+                            public void onSuccess() {
+                                if (isValid) {
+                                    archetypeCatalogModel.setUrl(dialog.getUrl());
+                                    updateRow(index, archetypeCatalogModel);
+                                }
+                            }
+                        });
                     }
                 }
-
-                /*final String text = Messages.showInputDialog(
-                        "Archetype Catalog URL",
-                        "Edit Archetype Catalog URL",
-                        Messages.getQuestionIcon(),
-                        archetypeCatalogModel.getUrl(),
-                        new ArchetypeRepositoryURLValidator());
-                */
             }
         };
         decorator.setEditAction(editAction);
@@ -141,24 +156,44 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         };
         decorator.setRemoveAction(deleteAction);
 
+        JPanel panel = decorator.createPanel();
+
+        JPanel component = new JPanel(new BorderLayout());
+        component.setBorder(IdeBorderFactory.createTitledBorder("Archetype Catalogs", false, new Insets(10, 0, 0, 0)));
+        component.add(panel);
+
+        final AnActionButton removeButton = ToolbarDecorator.findRemoveButton(component);
+        final AnActionButton editButton = ToolbarDecorator.findEditButton(component);
+
         lstCatalogs.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent e) {
-                ArchetypeCatalogModel archetypeCatalogModel = getArchetypeCatalogModel(e.getFirstIndex());
+                final int index = lstCatalogs.getSelectedRow();
+                ArchetypeCatalogModel archetypeCatalogModel = getArchetypeCatalogModel(index);
                 if (archetypeCatalogModel != null) {
                     if (! (ArchetypeCatalogType.CUSTOM.equals(archetypeCatalogModel.getType())) ) {
-                        decorator.getActionsPanel().setEnabled(CommonActionsPanel.Buttons.EDIT, false);
-                        decorator.getActionsPanel().setEnabled(CommonActionsPanel.Buttons.REMOVE, false);
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                removeButton.setEnabled(false);
+                                editButton.setEnabled(false);
+                            }
+                        });
                     } else {
-                        decorator.getActionsPanel().setEnabled(CommonActionsPanel.Buttons.EDIT, true);
-                        decorator.getActionsPanel().setEnabled(CommonActionsPanel.Buttons.REMOVE, true);
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                removeButton.setEnabled(true);
+                                editButton.setEnabled(true);
+                            }
+                        });
                     }
                 }
             }
         });
 
-        JPanel panel = decorator.createPanel();
-        UIUtil.addBorder(panel, IdeBorderFactory.createTitledBorder("Archetype Catalogs"));
-        return panel;
+        lstCatalogs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        return component;
     }
 
     private boolean validateInput(String text) {
@@ -188,7 +223,13 @@ public class ArchetypeCatalogConfigurable implements Configurable {
                 return false;
             } finally {
                 if (errorText != null) {
-                    Messages.showErrorDialog(errorText, "Archetype Catalog URL");
+                    final String message = errorText;
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            Messages.showErrorDialog(message, "Archetype Catalog URL");
+                        }
+                    });
                 }
             }
         }

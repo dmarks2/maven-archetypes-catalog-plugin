@@ -13,6 +13,7 @@ import org.jetbrains.idea.maven.project.MavenProjectsManager;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -109,6 +110,40 @@ public class Util {
             return url.toString();
         }
 
+        return null;
+    }
+
+    @Nullable
+    public static String getFileUrl(String path) {
+        File file = new File(path);
+        if (file.exists()) {
+            try {
+                return file.toURI().toURL().toString();
+            } catch (MalformedURLException e1) {
+                e1.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    @Nullable
+    public static String getFilePath(@Nullable String url) {
+        if (url != null) {
+            if (url.startsWith("file:/")) {
+                try {
+                    URL urlValue = new URL(url);
+                    File file;
+                    try {
+                        file = new File(urlValue.toURI());
+                    } catch (URISyntaxException e) {
+                        file = new File(urlValue.getPath());
+                    }
+                    return file.getAbsolutePath();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return null;
     }
 

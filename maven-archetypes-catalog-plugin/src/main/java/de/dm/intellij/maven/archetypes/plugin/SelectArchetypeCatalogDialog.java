@@ -5,6 +5,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
+import com.intellij.ui.components.JBLabel;
+import com.intellij.ui.components.JBTextField;
+import de.dm.intellij.maven.archetypes.Util;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -18,7 +21,7 @@ import java.net.URL;
  */
 public class SelectArchetypeCatalogDialog extends DialogWrapper {
 
-    private TextFieldWithBrowseButton textField = new TextFieldWithBrowseButton();
+    private TextFieldWithBrowseButton textField = new TextFieldWithBrowseButton(new JBTextField(30));
 
     protected SelectArchetypeCatalogDialog(@Nullable Project project, FileChooserDescriptor descriptor, String title) {
         super(project);
@@ -32,12 +35,15 @@ public class SelectArchetypeCatalogDialog extends DialogWrapper {
     @Override
     protected JComponent createCenterPanel() {
         JPanel panel = new JPanel(new BorderLayout(15, 0));
+        JBLabel hint = new JBLabel("Enter an URL or select a local archetype-catalog.xml file");
+
         JLabel messageComponent = new JLabel(Messages.getQuestionIcon());
         Container screenSize = new Container();
         screenSize.setLayout(new BorderLayout());
         screenSize.add(messageComponent, "North");
-        panel.add(screenSize, "West");
 
+        panel.add(hint, "North");
+        panel.add(screenSize, "West");
         panel.add(textField, "Center");
 
         return panel;
@@ -51,13 +57,9 @@ public class SelectArchetypeCatalogDialog extends DialogWrapper {
             new URL(text);
             return text;
         } catch (MalformedURLException e) {
-            File file = new File(text);
-            if (file.exists()) {
-                try {
-                    return file.toURI().toURL().toString();
-                } catch (MalformedURLException e1) {
-                    e1.printStackTrace();
-                }
+            String fileUrl = Util.getFileUrl(text);
+            if (fileUrl != null) {
+                return fileUrl;
             }
         }
         return textField.getText();
@@ -66,8 +68,7 @@ public class SelectArchetypeCatalogDialog extends DialogWrapper {
     public void setUrl(String url) {
         if (url != null) {
             if (url.startsWith("file:/")) {
-                File file = new File(url);
-                textField.setText(file.getAbsolutePath());
+                textField.setText(Util.getFilePath(url));
                 return;
             }
         }
