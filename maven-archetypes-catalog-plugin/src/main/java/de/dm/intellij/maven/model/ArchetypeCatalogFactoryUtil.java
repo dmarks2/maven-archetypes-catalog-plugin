@@ -3,6 +3,7 @@ package de.dm.intellij.maven.model;
 import com.intellij.util.net.HttpConfigurable;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.apache.maven.archetype.catalog.ObjectFactory;
+import org.jetbrains.annotations.NotNull;
 import org.xml.sax.*;
 
 import javax.xml.XMLConstants;
@@ -18,6 +19,7 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -48,12 +50,21 @@ public class ArchetypeCatalogFactoryUtil {
 
     @SuppressWarnings("unchecked")
     public static ArchetypeCatalog getArchetypeCatalog(URL url) throws IOException, JAXBException, SAXException {
+        if (url != null) {
+            InputStream inputStream = getInputStream(url);
+            if (inputStream != null) {
+                return getArchetypeCatalog(inputStream);
+            }
+        }
+        return null;
+    }
+
+    private static ArchetypeCatalog getArchetypeCatalog(InputStream inputStream) throws JAXBException, IOException, SAXException {
         JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         xmlFilter.setContentHandler(unmarshaller.getUnmarshallerHandler());
 
-        URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());
-        InputSource inputSource = new InputSource(urlConnection.getInputStream());
+        InputSource inputSource = new InputSource(inputStream);
         xmlFilter.parse(inputSource);
 
         JAXBElement<ArchetypeCatalog> result = (JAXBElement<ArchetypeCatalog>) unmarshaller.getUnmarshallerHandler().getResult();
@@ -61,9 +72,18 @@ public class ArchetypeCatalogFactoryUtil {
     }
 
     public static boolean validateArchetypeCatalog(URL url) throws IOException, SAXException, JAXBException {
-        URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());
+        if (url != null) {
+            InputStream inputStream = getInputStream(url);
+            if (inputStream != null) {
+                return validateArchetypeCatalog(inputStream);
+            }
+        }
 
-        InputSource inputSource = new InputSource(urlConnection.getInputStream());
+        return false;
+    }
+
+    private static boolean validateArchetypeCatalog(InputStream inputStream) throws IOException {
+        InputSource inputSource = new InputSource(inputStream);
         MyErrorHandler myErrorHandler = new MyErrorHandler();
         xmlFilter.setErrorHandler(myErrorHandler);
 
@@ -73,7 +93,26 @@ public class ArchetypeCatalogFactoryUtil {
         } catch (SAXException e) {
             return false;
         }
+    }
 
+    private static InputStream getInputStream(@NotNull URL url) throws IOException {
+        String protocol = url.getProtocol();
+        if (
+                ("http".equals(protocol)) ||
+                        ("https".equals(protocol))
+                ) {
+            //Use IntelliJ proxy settings for http / https URLs
+
+            URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());
+            return urlConnection.getInputStream();
+        } else if ("file".equals(protocol)) {
+            URLConnection urlConnection = url.openConnection();
+            return urlConnection.getInputStream();
+        } else if ("jar".equals(protocol)) {
+            URLConnection urlConnection = url.openConnection();
+            return urlConnection.getInputStream();
+        }
+        return null;
     }
 
     private static class MyErrorHandler implements ErrorHandler {

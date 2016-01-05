@@ -27,6 +27,7 @@
             <li>Feature: Improved extensibility by providing the extension point in a separate JAR file</li>
             <li>Feature: Read Archetype Catalogs from maven-archetype-plugin or archetypeCatalog property from pom.xml</li>
             <li>Feature: Added support for file based archetype-catalog.xml files</li>
+            <li>Feature: Added support for JAR-based URLs (e.g. for extensions providing their own archetype-catalog.xml)</li>
         </ul>
         <p>Version 1.0.4</p>
         <ul>

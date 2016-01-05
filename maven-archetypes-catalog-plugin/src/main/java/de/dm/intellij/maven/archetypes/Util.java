@@ -108,6 +108,8 @@ public class Util {
             }
 
             return url.toString();
+        } else if (catalogUrl.toLowerCase().startsWith("jar:")) {
+            return catalogUrl;
         }
 
         return null;
