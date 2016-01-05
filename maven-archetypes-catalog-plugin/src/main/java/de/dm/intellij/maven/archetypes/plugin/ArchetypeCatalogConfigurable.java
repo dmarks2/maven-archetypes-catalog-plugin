@@ -6,12 +6,10 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.*;
 import com.intellij.ui.table.JBTable;
-import com.intellij.util.ui.UIUtil;
 import de.dm.intellij.maven.archetypes.Util;
 import de.dm.intellij.maven.model.ArchetypeCatalogFactoryUtil;
 import de.dm.intellij.maven.model.ArchetypeCatalogModel;
@@ -271,35 +269,6 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     private void deleteRow(int row) {
         ((ArchetypeCatalogTableModel)listModel).removeRow(row);
-    }
-
-    private static class ArchetypeRepositoryURLValidator implements InputValidatorEx {
-
-        private String errorText;
-
-        @Override
-        public boolean canClose(String inputString) {
-            try {
-                final URL url = new URL(inputString);
-                boolean result = StringUtil.isNotEmpty(url.getHost());
-                errorText = null;
-                return result;
-            } catch (MalformedURLException e) {
-                errorText = "Invalid URL";
-            }
-            return false;
-        }
-
-        @Override
-        public boolean checkInput(String inputString) {
-            return canClose(inputString);
-        }
-
-        @Nullable
-        @Override
-        public String getErrorText(String s) {
-            return errorText;
-        }
     }
 
     private class ArchetypeCatalogTableModel extends AbstractTableModel {

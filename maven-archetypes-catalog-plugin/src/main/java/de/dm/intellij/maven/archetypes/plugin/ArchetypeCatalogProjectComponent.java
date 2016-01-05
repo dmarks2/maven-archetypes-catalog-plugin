@@ -7,7 +7,6 @@ import de.dm.intellij.maven.archetypes.Util;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.MalformedURLException;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 

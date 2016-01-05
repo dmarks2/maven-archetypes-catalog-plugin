@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.dm.intellij</groupId>
         <artifactId>maven-archetypes-catalog-plugin-parent</artifactId>
-        <version>1.0.5-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -295,7 +295,10 @@
                                     <tag>${project.version}</tag>
                                     <fileSets>
                                         <fileSet>
-                                            <include>${project.artifactId}*.zip</include>
+                                            <directory>${project.build.directory}</directory>
+                                            <includes>
+                                                <include>${project.artifactId}*.zip</include>
+                                            </includes>
                                         </fileSet>
                                     </fileSets>
                                 </configuration>

@@ -14,10 +14,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Validator;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -99,8 +96,8 @@ public class ArchetypeCatalogFactoryUtil {
         String protocol = url.getProtocol();
         if (
                 ("http".equals(protocol)) ||
-                        ("https".equals(protocol))
-                ) {
+                ("https".equals(protocol))
+            ) {
             //Use IntelliJ proxy settings for http / https URLs
 
             URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());

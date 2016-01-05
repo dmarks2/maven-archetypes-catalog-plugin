@@ -4,7 +4,6 @@ import com.intellij.notification.NotificationType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import de.dm.intellij.maven.model.ArchetypeCatalogFactoryUtil;
-import de.dm.intellij.maven.model.ArchetypeCatalogType;
 import org.apache.maven.archetype.catalog.Archetype;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.jetbrains.idea.maven.indices.MavenArchetypesProvider;

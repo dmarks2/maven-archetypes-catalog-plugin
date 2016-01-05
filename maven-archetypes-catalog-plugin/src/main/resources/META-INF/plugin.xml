@@ -20,14 +20,14 @@
      ]]></description>
 
     <change-notes><![CDATA[
-        <p>Version 1.0.5</p>
+        <p>Version 1.1.0</p>
         <ul>
-            <li>Feature: Improved GUI</li>
-            <li>Bugfix: List was shown as modified even if no modifications were made</li>
+            <li>Feature: Improved User Interface</li>
             <li>Feature: Improved extensibility by providing the extension point in a separate JAR file</li>
             <li>Feature: Read Archetype Catalogs from maven-archetype-plugin or archetypeCatalog property from pom.xml</li>
             <li>Feature: Added support for file based archetype-catalog.xml files</li>
             <li>Feature: Added support for JAR-based URLs (e.g. for extensions providing their own archetype-catalog.xml)</li>
+            <li>Bugfix: List was shown as modified even if no modifications were made</li>
         </ul>
         <p>Version 1.0.4</p>
         <ul>
@@ -84,6 +84,5 @@
             <implementation-class>de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogProjectComponent</implementation-class>
         </component>
     </project-components>
-
 
 </idea-plugin>
