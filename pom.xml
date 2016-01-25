@@ -4,7 +4,7 @@
 
     <groupId>de.dm.intellij</groupId>
     <artifactId>maven-archetypes-catalog-plugin-parent</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.2.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
@@ -144,7 +144,7 @@
             <!-- TODO: proper groupId would be com.jetbrains.intellij -->
 
             <dependency>
-                <!-- mvn install:install-file -Dfile=idea.jar -DgroupId=org.jetbrains -DartifactId=idea -Dversion=14.1.5 -Dpackaging=jar -->
+                <!-- mvn install:install-file -Dfile=idea.jar -DgroupId=org.jetbrains -DartifactId=idea -Dversion=15.0.3 -Dpackaging=jar -->
                 <groupId>org.jetbrains</groupId>
                 <artifactId>idea</artifactId>
                 <version>${intellij.idea.version}</version>
@@ -155,7 +155,7 @@
                 -->
             </dependency>
             <dependency>
-                <!-- mvn install:install-file -Dfile=openapi.jar -DgroupId=org.jetbrains -DartifactId=openapi -Dversion=14.1.5 -Dpackaging=jar -->
+                <!-- mvn install:install-file -Dfile=openapi.jar -DgroupId=org.jetbrains -DartifactId=openapi -Dversion=15.0.3 -Dpackaging=jar -->
                 <groupId>org.jetbrains</groupId>
                 <artifactId>openapi</artifactId>
                 <version>${intellij.idea.version}</version>
@@ -165,7 +165,7 @@
                 <systemPath>${intellij.idea.home}\lib\openapi.jar</systemPath>
                 -->
             </dependency>
-            <!-- mvn install:install-file -Dfile=annotations.jar -DgroupId=org.jetbrains -DartifactId=annotations -Dversion=14.1.5 -Dpackaging=jar -->
+            <!-- mvn install:install-file -Dfile=annotations.jar -DgroupId=org.jetbrains -DartifactId=annotations -Dversion=15.0.3 -Dpackaging=jar -->
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>annotations</artifactId>
@@ -176,7 +176,7 @@
                 <systemPath>${intellij.idea.home}\lib\annotations.jar</systemPath>
                 -->
             </dependency>
-            <!-- mvn install:install-file -Dfile=util.jar -DgroupId=org.jetbrains -DartifactId=util -Dversion=14.1.5 -Dpackaging=jar -->
+            <!-- mvn install:install-file -Dfile=util.jar -DgroupId=org.jetbrains -DartifactId=util -Dversion=15.0.3 -Dpackaging=jar -->
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>util</artifactId>
@@ -187,7 +187,7 @@
                 <systemPath>${intellij.idea.home}\lib\util.jar</systemPath>
                 -->
             </dependency>
-            <!-- mvn install:install-file -Dfile=extensions.jar -DgroupId=org.jetbrains -DartifactId=extensions -Dversion=14.1.5 -Dpackaging=jar -->
+            <!-- mvn install:install-file -Dfile=extensions.jar -DgroupId=org.jetbrains -DartifactId=extensions -Dversion=15.0.3 -Dpackaging=jar -->
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>extensions</artifactId>
@@ -198,7 +198,7 @@
                 <systemPath>${intellij.idea.home}\lib\extensions.jar</systemPath>
                 -->
             </dependency>
-            <!-- mvn install:install-file -Dfile=maven.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven -Dversion=14.1.5 -Dpackaging=jar -->
+            <!-- mvn install:install-file -Dfile=maven.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven -Dversion=15.0.3 -Dpackaging=jar -->
             <dependency>
                 <groupId>org.jetbrains.plugins</groupId>
                 <artifactId>maven</artifactId>
@@ -209,7 +209,7 @@
                 <systemPath>${intellij.idea.home}\plugins\maven\lib\maven.jar</systemPath>
                 -->
             </dependency>
-            <!-- mvn install:install-file -Dfile=maven-server-api.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven-server-api -Dversion=14.1.5 -Dpackaging=jar -->
+            <!-- mvn install:install-file -Dfile=maven-server-api.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven-server-api -Dversion=15.0.3 -Dpackaging=jar -->
             <dependency>
                 <groupId>org.jetbrains.plugins</groupId>
                 <artifactId>maven-server-api</artifactId>
@@ -264,7 +264,7 @@
                 <scope>test</scope>
             </dependency>
 
-            <!-- mvn install:install-file -Dfile=trove4j.jar -DgroupId=org.jetbrains -DartifactId=trove4j -Dversion=14.1.5 -Dpackaging=jar -->
+            <!-- mvn install:install-file -Dfile=trove4j.jar -DgroupId=org.jetbrains -DartifactId=trove4j -Dversion=15.0.3 -Dpackaging=jar -->
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>trove4j</artifactId>

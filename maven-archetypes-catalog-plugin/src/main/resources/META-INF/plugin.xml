@@ -20,6 +20,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.2.0</p>
+        <ul>
+            <li>Feature: Added support for IntelliJ IDEA 15</li>
+        </ul>
         <p>Version 1.1.0</p>
         <ul>
             <li>Feature: Improved User Interface</li>
@@ -53,7 +57,7 @@
         </ul>
     ]]></change-notes>
 
-    <idea-version since-build="139"/>
+    <idea-version since-build="143"/>
 
     <depends>org.jetbrains.idea.maven</depends>
 
