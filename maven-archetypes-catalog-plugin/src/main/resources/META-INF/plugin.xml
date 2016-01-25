@@ -53,7 +53,7 @@
         </ul>
     ]]></change-notes>
 
-    <idea-version since-build="139"/>
+    <idea-version since-build="139" until-build="141"/>
 
     <depends>org.jetbrains.idea.maven</depends>
 
