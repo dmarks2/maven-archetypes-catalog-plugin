@@ -30,7 +30,6 @@ public class ArchetypeCatalogMavenImporter extends MavenImporter {
         super(APACHE_MAVEN_GROUP_ID, ARCHETYPE_ARTIFACT_ID);
     }
 
-
     @Override
     public void preProcess(Module module, MavenProject mavenProject, MavenProjectChanges mavenProjectChanges, IdeModifiableModelsProvider ideModifiableModelsProvider) {
 

@@ -139,7 +139,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- C:\Program Files (x86)\JetBrains\IntelliJ IDEA 14.1.3\lib -->
+            <!-- C:\Program Files (x86)\JetBrains\IntelliJ IDEA 15.0.3\lib -->
 
             <!-- TODO: proper groupId would be com.jetbrains.intellij -->
 

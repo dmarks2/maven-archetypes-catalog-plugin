@@ -23,6 +23,7 @@
         <p>Version 1.2.0</p>
         <ul>
             <li>Feature: Added support for IntelliJ IDEA 15</li>
+            <li>Bugfix: Imported Archetype Catalogs from POM file were not saved</li>
         </ul>
         <p>Version 1.1.0</p>
         <ul>
