@@ -55,9 +55,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.6</java.version>
 
-        <intellij.idea.version>14.1.5</intellij.idea.version>
-        <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.4</intellij.idea.home>
-        <intellij.idea.sdk.name>IntelliJ IDEA Community Edition IC-141.2735.5</intellij.idea.sdk.name>
+        <intellij.idea.version>15.0.3</intellij.idea.version>
+        <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ Community Edition 15.0.3</intellij.idea.home>
+        <intellij.idea.sdk.name>IntelliJ IDEA IU-141.1532.4</intellij.idea.sdk.name>
 
         <vendor.email>Dominik.Marks@gmx.de</vendor.email>
         <ij.plugin>true</ij.plugin>
