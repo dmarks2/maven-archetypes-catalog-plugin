@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
         <groupId>de.dm.intellij</groupId>
@@ -86,6 +87,47 @@
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/IT*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-integration-test-resource</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>add-test-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <filtering>true</filtering>
+                                    <directory>src/integration-test/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-integration-test-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/integration-test/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
@@ -179,10 +221,6 @@
             <artifactId>maven</artifactId>
             <version>${intellij.idea.version}</version>
             <scope>provided</scope>
-            <!--
-            <scope>system</scope>
-            <systemPath>${intellij.idea.home}\plugins\maven\lib\maven.jar</systemPath>
-            -->
         </dependency>
         <!-- mvn install:install-file -Dfile=maven-server-api.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven-server-api -Dversion=14.1.5 -Dpackaging=jar -->
         <dependency>
@@ -226,13 +264,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jdom</groupId>
-            <artifactId>jdom</artifactId>
-            <version>1.1.3</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.3.6</version>
@@ -251,19 +282,74 @@
             -->
         </dependency>
 
+        <!-- mvn install:install-file -Dfile=kotlin-runtime.jar -DgroupId=org.jetbrains -DartifactId=kotlin-runtime -Dversion=15.0.3 -Dpackaging=jar -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>kotlin-runtime</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>test</scope>
+            <!--
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\kotlin-runtime.jar</systemPath>
+            -->
+        </dependency>
+
+        <!-- mvn install:install-file -Dfile=properties.jar -DgroupId=org.jetbrains.plugins -DartifactId=properties -Dversion=15.0.3 -Dpackaging=jar -->
+        <dependency>
+            <groupId>org.jetbrains.plugins</groupId>
+            <artifactId>properties</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>test</scope>
+            <!--
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\plugins\maven\lib\maven-server-api.jar</systemPath>
+            -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains.plugins</groupId>
+            <artifactId>test-maven</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\plugins\maven\lib\maven.jar</systemPath>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>2.4.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>17.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>jdom</artifactId>
+            <version>${intellij.idea.version}</version>
+            <scope>system</scope>
+            <systemPath>${intellij.idea.home}\lib\jdom.jar</systemPath>
+        </dependency>
+
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>maven-archetypes-catalog-openapi</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.jdom</groupId>
-            <artifactId>jdom</artifactId>
-            <version>1.1.3</version>
-            <scope>provided</scope>
-        </dependency>
-
 
     </dependencies>
 
@@ -307,6 +393,118 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>integration-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>create-bin-dir</id>
+                                <phase>pre-integration-test</phase>
+                                <configuration>
+                                    <tasks>
+                                        <mkdir dir="target/test-classes/bin"/>
+                                    </tasks>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>integration-tests</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <useManifestOnlyJar>false</useManifestOnlyJar>
+                            <useSystemClassLoader>true</useSystemClassLoader>
+                            <!-- <debugForkedProcess>true</debugForkedProcess> -->
+                            <additionalClasspathElements>
+                                <additionalClasspathElement>${java.home}/../lib/tools.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\maven.jar</additionalClasspathElement>
+                                <!-- snip -->
+                                <!--
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\maven30-server-impl.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\artifact-resolver-m2.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\artifact-resolver-m3.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\artifact-resolver-m31.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\lucene-core-2.4.1.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\maven2-server-impl.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\maven3-server-common.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\maven32-server-impl.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\maven-jps-plugin.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\maven-server-api.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\plexus-archiver-2.4.4.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\plexus-utils-2.0.6.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\resources_en.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\plugins\maven\lib\wadl-core.jar</additionalClasspathElement>
+                                -->
+                                <!-- snip -->
+                                <additionalClasspathElement>${intellij.idea.home}\lib\idea_rt.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\picocontainer.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\bootstrap.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\resources.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\jna.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\netty-all-4.1.0.Beta8.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\jps-builders.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\jps-model.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\jsr166e.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\icons.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\sanselan-0.98-snapshot.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\proxy-vole_20131209.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\resources_en.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\nanoxml-2.2.3.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\asm-all.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\snappy-in-java-0.3.1.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\rngom-20051226-patched.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\protobuf-2.5.0.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\jing.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\oromatcher.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\forms_rt.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\cglib-2.2.2.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\asm.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\slf4j-api-1.7.10.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\slf4j-log4j12-1.7.10.jar</additionalClasspathElement>
+                                <additionalClasspathElement>${intellij.idea.home}\lib\jna-platform.jar</additionalClasspathElement>
+                            </additionalClasspathElements>
+                            <argLine>-da -Xbootclasspath/a:"${intellij.idea.home}/lib/boot.jar"</argLine>
+                            <systemPropertyVariables>
+                                <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
+                                <idea.test.group>ALL_EXCLUDE_DEFINED</idea.test.group>
+                                <idea.load.plugins>true</idea.load.plugins>
+                                <idea.load.plugins.id>com.intellij,org.jetbrains.idea.maven,de.dm.intellij.maven-archetypes-catalog-plugin</idea.load.plugins.id>
+                                <idea.filewatcher.disabled>true</idea.filewatcher.disabled>
+                                <idea.home.path>${project.build.testOutputDirectory}</idea.home.path>
+                                <idea.launcher.bin.path>${intellij.idea.home}/bin</idea.launcher.bin.path>
+                                <idea.platform.prefix>Idea</idea.platform.prefix>
+                                <idea.is.unit.test>true</idea.is.unit.test>
+                                <idea.plugins.path>${intellij.idea.home}/plugins</idea.plugins.path>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jetbrains.plugins</groupId>
+                    <artifactId>maven</artifactId>
+                    <version>${intellij.idea.version}</version>
+                    <scope>system</scope>
+                    <systemPath>${intellij.idea.home}\plugins\maven\lib\maven.jar</systemPath>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 

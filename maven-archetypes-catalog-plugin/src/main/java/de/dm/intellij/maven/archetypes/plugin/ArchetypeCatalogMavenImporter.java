@@ -39,25 +39,22 @@ public class ArchetypeCatalogMavenImporter extends MavenImporter {
     public void process(IdeModifiableModelsProvider ideModifiableModelsProvider, Module module, MavenRootModelAdapter mavenRootModelAdapter, MavenProjectsTree mavenProjectsTree, MavenProject mavenProject, MavenProjectChanges mavenProjectChanges, Map<MavenProject, String> map, List<MavenProjectsProcessorTask> list) {
         MavenPlugin plugin = mavenProject.findPlugin(myPluginGroupID, myPluginArtifactID);
 
+        String archetypeCatalog = mavenProject.getProperties().getProperty(ARCHETYPE_CATALOG);
+
         if (plugin != null) {
             Element config = plugin.getConfigurationElement();
             if (config != null) {
                 Element child = config.getChild(ARCHETYPE_CATALOG);
-                String archetypeCatalog = child.getText();
-
-                ArchetypeCatalogProjectComponent component = module.getProject().getComponent(ArchetypeCatalogProjectComponent.class);
-                if (component != null) {
-                    component.addMavenArchetypeCatalogs(archetypeCatalog);
+                if (child != null) {
+                    archetypeCatalog = child.getText();
                 }
-
             }
-        } else {
-            String archetypeCatalog = mavenProject.getProperties().getProperty(ARCHETYPE_CATALOG);
-            if ( (archetypeCatalog != null) && (archetypeCatalog.length() > 0) ) {
-                ArchetypeCatalogProjectComponent component = module.getProject().getComponent(ArchetypeCatalogProjectComponent.class);
-                if (component != null) {
-                    component.addMavenArchetypeCatalogs(archetypeCatalog);
-                }
+        }
+
+        if ( (archetypeCatalog != null) && (archetypeCatalog.length() > 0) ) {
+            ArchetypeCatalogProjectComponent component = module.getProject().getComponent(ArchetypeCatalogProjectComponent.class);
+            if (component != null) {
+                component.addMavenArchetypeCatalogs(archetypeCatalog);
             }
         }
     }
