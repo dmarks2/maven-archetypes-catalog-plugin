@@ -8,11 +8,11 @@
 
     <description><![CDATA[
         <p><b>${project.description}</b><p>
-        <p>IntelliJ IDEA lacks the possibility to fetch external Maven Archetype Catalog files (archetype-catalog.xml). You had to add external Maven Archetypes by hand.</p>
-        <p>This plugin for IntelliJ IDEA aims to integrate the possibility to define a list of external Maven Archetype Catalog files. Those files are fetched and the containing Maven Archetypes are added to the available archetypes in IntelliJ IDEA.</p>
+        <p>IntelliJ IDEA lacks the possibility to fetch external Maven Archetype Catalog files (archetype-catalog.xml). You have to add external Maven Archetypes by hand.</p>
+        <p>This plugin for IntelliJ IDEA allows you to define a list of external Maven Archetype Catalog files. Those files are fetched and the containing Maven Archetypes are added to the available archetypes in IntelliJ IDEA.</p>
         <p><b>Usage</b></p>
         <p>It adds a new entry <em>Maven Archetype Catalogs</em> to the Settings menu at <em>File</em> - <em>Settings</em> - <em>Build, Execution and Deployment</em> - <em>Build tools</em>.</p>
-        <p>Here you can add additional URLs pointing to external archetype-catalog.xml files.</p>
+        <p>Here you can add additional URLs or choose local files external archetype-catalog.xml files.</p>
         <p>After adding those Catalog files the Archetypes present in these files will be available when creating new Maven projects or Maven modules based on Archetypes.</p>
         <p><b>Importing from pom.xml</b></p>
         <p>If you define Maven Archetype Catalogs in your pom.xml file, those settings will be automatically imported.</p>
@@ -20,6 +20,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.2.1</p>
+        <ul>
+            <li>Bugfix: Fixed NullPointerException when maven-archetype-plugin was configured in pom.xml, but no archetypeCatalog configured<li>
+        </ul>
         <p>Version 1.2.0</p>
         <ul>
             <li>Feature: Added support for IntelliJ IDEA 15</li>
