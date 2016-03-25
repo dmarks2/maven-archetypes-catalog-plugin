@@ -307,15 +307,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jetbrains.plugins</groupId>
-            <artifactId>test-maven</artifactId>
-            <version>${intellij.idea.version}</version>
-            <scope>system</scope>
-            <systemPath>${intellij.idea.home}\plugins\maven\lib\maven.jar</systemPath>
-        </dependency>
-
-
-        <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
             <version>2.4.1</version>
@@ -340,10 +331,7 @@
             <groupId>org.jetbrains</groupId>
             <artifactId>jdom</artifactId>
             <version>${intellij.idea.version}</version>
-            <scope>system</scope>
-            <systemPath>${intellij.idea.home}\lib\jdom.jar</systemPath>
         </dependency>
-
 
         <dependency>
             <groupId>${project.groupId}</groupId>

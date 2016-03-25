@@ -278,6 +278,18 @@
                 <systemPath>${intellij.idea.home}\lib\trove4j.jar</systemPath>
                 -->
             </dependency>
+
+            <!-- mvn install:install-file -Dfile=jdom.jar -DgroupId=org.jetbrains -DartifactId=jdom -Dversion=15.0.3 -Dpackaging=jar -->
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>jdom</artifactId>
+                <version>${intellij.idea.version}</version>
+                <scope>provided</scope>
+                <!--
+                <scope>system</scope>
+                <systemPath>${intellij.idea.home}\lib\trove4j.jar</systemPath>
+                -->
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

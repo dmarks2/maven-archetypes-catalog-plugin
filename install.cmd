@@ -16,6 +16,7 @@ call mvn install:install-file -Dfile=%1\lib\extensions.jar -DgroupId=org.jetbrai
 call mvn install:install-file -Dfile=%1\plugins\maven\lib\maven.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven -Dversion=%2 -Dpackaging=jar
 call mvn install:install-file -Dfile=%1\plugins\maven\lib\maven-server-api.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven-server-api -Dversion=%2 -Dpackaging=jar
 call mvn install:install-file -Dfile=%1\lib\trove4j.jar -DgroupId=org.jetbrains -DartifactId=trove4j -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\lib\jdom.jar -DgroupId=org.jetbrains -DartifactId=jdom -Dversion=%2 -Dpackaging=jar
 
 goto fin
 
