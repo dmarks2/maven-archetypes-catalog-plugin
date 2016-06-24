@@ -1,5 +1,6 @@
 package de.dm.intellij.maven.model;
 
+import com.intellij.util.Base64;
 import com.intellij.util.net.HttpConfigurable;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.apache.maven.archetype.catalog.ObjectFactory;
@@ -98,9 +99,14 @@ public class ArchetypeCatalogFactoryUtil {
                 ("http".equals(protocol)) ||
                 ("https".equals(protocol))
             ) {
-            //Use IntelliJ proxy settings for http / https URLs
+            //Use IntelliJ proxy settings for http / https URL
 
             URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());
+            if (url.getUserInfo() != null) {
+                String basicAuth = "Basic " + new String(Base64.encode(url.getUserInfo().getBytes()));
+                urlConnection.setRequestProperty("Authorization", basicAuth);
+            }
+
             return urlConnection.getInputStream();
         } else if ("file".equals(protocol)) {
             URLConnection urlConnection = url.openConnection();
