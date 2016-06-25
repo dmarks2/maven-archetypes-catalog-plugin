@@ -14,7 +14,8 @@ Install the plugin.
 It adds a new entry **Maven Archetype Catalogs** to the Settings menu at
 **File** - **Settings** - **Build, Execution and Deployment** - **Build tools**.
 
-Here you can add additional URLs or choose local files pointing to `archetype-catalog.xml` files.
+Here you can add additional URLs or choose local files pointing to `archetype-catalog.xml` files. If you need to authenticate
+to the reposistory, use an URL like 'http://[username]:[password]@[url]'.
 
 After adding those Catalog files the Archetypes present in these files will be available
 when creating new Maven projects or Maven modules based on Archetypes.
