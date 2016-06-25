@@ -300,4 +300,12 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <name>dmarks-maven</name>
+            <url>https://api.bintray.com/maven/dmarks/maven/maven-archetypes-catalog-plugin/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
 </project>
