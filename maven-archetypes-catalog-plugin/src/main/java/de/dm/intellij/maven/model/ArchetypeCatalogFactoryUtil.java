@@ -2,6 +2,7 @@ package de.dm.intellij.maven.model;
 
 import com.intellij.util.Base64;
 import com.intellij.util.net.HttpConfigurable;
+import de.dm.intellij.maven.archetypes.Util;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.apache.maven.archetype.catalog.ObjectFactory;
 import org.jetbrains.annotations.NotNull;
@@ -100,8 +101,11 @@ public class ArchetypeCatalogFactoryUtil {
                 ("https".equals(protocol))
             ) {
             //Use IntelliJ proxy settings for http / https URL
+            String catalogUrl = url.toString();
+            catalogUrl = Util.loadPasswordFromUrl(catalogUrl);
+            url = new URL(catalogUrl);
 
-            URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(url.toString());
+            URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(catalogUrl);
             if (url.getUserInfo() != null) {
                 String basicAuth = "Basic " + new String(Base64.encode(url.getUserInfo().getBytes()));
                 urlConnection.setRequestProperty("Authorization", basicAuth);

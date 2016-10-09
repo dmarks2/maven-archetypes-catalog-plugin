@@ -30,6 +30,8 @@ public class Util {
     public static final String NOTIFICATION_GROUP_ID = "maven-archetypes-catalog-plugin";
     public static final String COMPONENT_NAME = "maven-archetype-catalog-plugin";
 
+    public static final String PASSWORD_PLACEHOLDER = "**********";
+
     public static List<ArchetypeCatalogModel> getArchetypeCatalogModels() {
         List<ArchetypeCatalogModel> result = new ArrayList<ArchetypeCatalogModel>();
         Set<String> customUrls = ArchetypeCatalogSettings.getInstance().getUrls();
@@ -53,7 +55,9 @@ public class Util {
         Set<String> customUrls = new HashSet<String>();
         for (ArchetypeCatalogModel archetypeCatalogModel : archetypeCatalogs) {
             if (ArchetypeCatalogType.CUSTOM.equals(archetypeCatalogModel.getType())) {
-                customUrls.add(archetypeCatalogModel.getUrl());
+                String catalogUrl = archetypeCatalogModel.getUrl();
+                catalogUrl = Util.savePasswordFromUrl(catalogUrl);
+                customUrls.add(catalogUrl);
             }
         }
         ArchetypeCatalogSettings.getInstance().setUrls(customUrls);
@@ -80,11 +84,11 @@ public class Util {
         }
         if (
                 (catalogUrl.toLowerCase().startsWith("http://")) ||
-                (catalogUrl.toLowerCase().startsWith("https://"))
+                        (catalogUrl.toLowerCase().startsWith("https://"))
                 ) {
             URL url = new URL(catalogUrl);
             String filePart = url.getFile();
-            if ( (filePart == null) || (filePart.length() == 0) || ("/".equals(filePart)) ) {
+            if ((filePart == null) || (filePart.length() == 0) || ("/".equals(filePart))) {
                 url = new URL(url, "archetype-catalog.xml");
             }
 
@@ -103,7 +107,7 @@ public class Util {
         } else if (catalogUrl.toLowerCase().startsWith("file:/")) {
             URL url = new URL(catalogUrl);
             String filePart = url.getFile();
-            if ( (filePart == null) || (filePart.length() == 0) || ("/".equals(filePart)) || (filePart.endsWith("/")) ) {
+            if ((filePart == null) || (filePart.length() == 0) || ("/".equals(filePart)) || (filePart.endsWith("/"))) {
                 url = new URL(url, "archetype-catalog.xml");
             }
 
@@ -147,6 +151,74 @@ public class Util {
             }
         }
         return null;
+    }
+
+    public static String loadPasswordFromUrl(String catalogUrl) {
+        try {
+            final URL url = new URL(catalogUrl);
+            String protocol = url.getProtocol();
+            if (
+                    ("http".equals(protocol)) ||
+                            ("https".equals(protocol))
+                    ) {
+
+                String userInfo = url.getUserInfo();
+                if (userInfo != null) {
+                    String[] infos = userInfo.split(":");
+                    if (infos.length == 2) {
+                        String username = infos[0];
+                        String password = infos[1];
+                        if (PASSWORD_PLACEHOLDER.equals(password)) {
+                            URL urlwithout = getNormalizedUrl(url);
+                            String key = username + "@" + urlwithout;
+                            password = PasswordManager.loadPassword(key);
+
+                            return catalogUrl.replace(userInfo, username + ":" + password);
+                        }
+                    }
+                }
+
+            }
+        } catch (MalformedURLException e) {
+            //no valid url, nothing saved
+        }
+        return catalogUrl;
+
+    }
+
+    public static String savePasswordFromUrl(String catalogUrl) {
+        try {
+            final URL url = new URL(catalogUrl);
+            String protocol = url.getProtocol();
+            if (
+                    ("http".equals(protocol)) ||
+                            ("https".equals(protocol))
+                    ) {
+
+                String userInfo = url.getUserInfo();
+                if (userInfo != null) {
+                    String[] infos = userInfo.split(":");
+                    if (infos.length == 2) {
+                        String username = infos[0];
+                        String password = infos[1];
+                        if (!(PASSWORD_PLACEHOLDER.equals(password))) {
+                            URL urlwithout = getNormalizedUrl(url);
+                            String key = username + "@" + urlwithout;
+                            PasswordManager.storePassword(key, password);
+
+                            return catalogUrl.replace(userInfo, username + ":" + PASSWORD_PLACEHOLDER);
+                        }
+                    }
+                }
+            }
+        } catch (MalformedURLException e) {
+            //no valid url, nothing saved
+        }
+        return catalogUrl;
+    }
+
+    private static URL getNormalizedUrl(URL url) throws MalformedURLException {
+        return new URL(url.getProtocol(), url.getHost(), url.getFile());
     }
 
 }
