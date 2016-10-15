@@ -103,6 +103,9 @@ public class ArchetypeCatalogFactoryUtil {
             //Use IntelliJ proxy settings for http / https URL
             String catalogUrl = url.toString();
             catalogUrl = Util.loadPasswordFromUrl(catalogUrl);
+            if (catalogUrl == null) {  //PasswordManager cancelled
+                return null;
+            }
             url = new URL(catalogUrl);
 
             URLConnection urlConnection = HttpConfigurable.getInstance().openConnection(catalogUrl);

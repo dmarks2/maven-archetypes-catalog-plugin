@@ -20,6 +20,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.2.3</p>
+        <ul>
+            <li>Feature: Safe Passwords for Basic Authentication in Password Manager instead of clear text</li>
+        </ul>
         <p>Version 1.2.2</p>
         <ul>
             <li>Feature: Support Basic Authentication for Archetype Catalog URLs</li>

@@ -16,8 +16,10 @@ public final class PasswordManager {
                     public void run() {
                         try {
                             PasswordSafe.getInstance().storePassword(null, PasswordManager.class, key, value);
+                            success = true;
                         } catch (Exception e) {
                             Messages.showErrorDialog("Cannot store password\n" + e.getMessage(), "Error");
+                            success = false;
                         }
                     }
                 }
@@ -25,6 +27,7 @@ public final class PasswordManager {
     }
 
     private static String password;
+    public static boolean success;
 
     public static String loadPassword(final String key) {
         UIUtil.invokeAndWaitIfNeeded(

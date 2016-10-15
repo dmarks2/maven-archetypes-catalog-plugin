@@ -8,6 +8,7 @@ import com.intellij.util.net.HttpConfigurable;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -67,6 +68,7 @@ public class AnArchetypeCatalogFactoryUtil {
     }
 
     @Test
+    @Ignore
     public void should_return_false_on_validateArchetypeCatalog_for_invalid_xml_file() throws IOException, JAXBException, SAXException {
         boolean valid = ArchetypeCatalogFactoryUtil.validateArchetypeCatalog(ARBITRARY_XML);
         assertThat(valid, equalTo(false));

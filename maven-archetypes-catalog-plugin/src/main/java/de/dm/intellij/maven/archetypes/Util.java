@@ -173,6 +173,10 @@ public class Util {
                             String key = username + "@" + urlwithout;
                             password = PasswordManager.loadPassword(key);
 
+                            if (password == null) { //PasswordManager cancelled
+                                return null;
+                            }
+
                             return catalogUrl.replace(userInfo, username + ":" + password);
                         }
                     }
@@ -205,8 +209,11 @@ public class Util {
                             URL urlwithout = getNormalizedUrl(url);
                             String key = username + "@" + urlwithout;
                             PasswordManager.storePassword(key, password);
-
-                            return catalogUrl.replace(userInfo, username + ":" + PASSWORD_PLACEHOLDER);
+                            if (PasswordManager.success) {
+                                return catalogUrl.replace(userInfo, username + ":" + PASSWORD_PLACEHOLDER);
+                            } else {
+                                return catalogUrl;
+                            }
                         }
                     }
                 }
