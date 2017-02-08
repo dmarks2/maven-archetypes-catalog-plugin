@@ -1,7 +1,7 @@
 @echo off
 
 rem call example
-rem install.cmd "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 15.0.3"  15.0.3
+rem install.cmd "C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.3" 2016.3
 
 if %1== goto help
 if %2== goto help
@@ -17,6 +17,8 @@ call mvn install:install-file -Dfile=%1\plugins\maven\lib\maven.jar -DgroupId=or
 call mvn install:install-file -Dfile=%1\plugins\maven\lib\maven-server-api.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven-server-api -Dversion=%2 -Dpackaging=jar
 call mvn install:install-file -Dfile=%1\lib\trove4j.jar -DgroupId=org.jetbrains -DartifactId=trove4j -Dversion=%2 -Dpackaging=jar
 call mvn install:install-file -Dfile=%1\lib\jdom.jar -DgroupId=org.jetbrains -DartifactId=jdom -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\lib\kotlin-runtime.jar -DgroupId=org.jetbrains -DartifactId=kotlin-runtime -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\plugins\properties\lib\properties.jar -DgroupId=org.jetbrains.plugins -DartifactId=properties -Dversion=%2 -Dpackaging=jar
 
 goto fin
 
