@@ -45,8 +45,12 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
 
                 ArchetypeCatalog catalog = ArchetypeCatalogFactoryUtil.getArchetypeCatalog(new URL(url));
 
-                for (Archetype archetype : catalog.getArchetypes().getArchetype()) {
-                    result.add(new MavenArchetype(archetype.getGroupId(), archetype.getArtifactId(), archetype.getVersion(), archetype.getRepository(), archetype.getDescription()));
+                if (catalog != null) {
+                    if (catalog.getArchetypes() != null) {
+                        for (Archetype archetype : catalog.getArchetypes().getArchetype()) {
+                            result.add(new MavenArchetype(archetype.getGroupId(), archetype.getArtifactId(), archetype.getVersion(), archetype.getRepository(), archetype.getDescription()));
+                        }
+                    }
                 }
             } catch (IOException e) {
                 handleException(e, url);
