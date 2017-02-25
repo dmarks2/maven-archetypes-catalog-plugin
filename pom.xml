@@ -55,9 +55,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.6</java.version>
 
-        <intellij.idea.version>15.0.3</intellij.idea.version>
-        <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ Community Edition 15.0.3</intellij.idea.home>
-        <intellij.idea.sdk.name>IntelliJ IDEA IU-141.1532.4</intellij.idea.sdk.name>
+        <intellij.idea.version>2016.3.3</intellij.idea.version>
+        <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.3.3</intellij.idea.home>
+        <intellij.idea.sdk.name>IntelliJ IDEA Community Edition IC-163.12024.16</intellij.idea.sdk.name>
 
         <vendor.email>Dominik.Marks@gmx.de</vendor.email>
         <ij.plugin>true</ij.plugin>
@@ -118,6 +118,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.18</version>
                     <configuration>
+                        <skip>true</skip>
                         <includes>
                             <include>**/*.java</include>
                         </includes>

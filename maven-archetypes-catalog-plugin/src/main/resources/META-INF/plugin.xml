@@ -8,8 +8,8 @@
 
     <description><![CDATA[
         <p><b>${project.description}</b><p>
-        <p>IntelliJ IDEA lacks the possibility to fetch external Maven Archetype Catalog files (archetype-catalog.xml). You have to add external Maven Archetypes by hand.</p>
-        <p>This plugin for IntelliJ IDEA allows you to define a list of external Maven Archetype Catalog files. Those files are fetched and the containing Maven Archetypes are added to the available archetypes in IntelliJ IDEA.</p>
+        <p>IntelliJ IDEA is not able to fetch external Maven Archetype Catalog files (archetype-catalog.xml). To use custom Maven Archetypes, you had to add external Maven Archetypes manually.</p>
+        <p>This plugin for IntelliJ IDEA allows you to define a list of external Maven Archetype Catalog files. Those files are fetched and the containing Maven Archetypes are made available in IntelliJ IDEA when creating new Maven projects.</p>
         <p><b>Usage</b></p>
         <p>It adds a new entry <em>Maven Archetype Catalogs</em> to the Settings menu at <em>File</em> - <em>Settings</em> - <em>Build, Execution and Deployment</em> - <em>Build tools</em>.</p>
         <p>Here you can add additional URLs or choose local files external archetype-catalog.xml files. If you need to authenticate to the reposistory, use an URL like 'http://[username]:[password]@[url]'.</p>
@@ -20,6 +20,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.2.4</p>
+        <ul>
+            <li>Bugfix: Fixed NullPointerException when handling empty Archetype Catalogs</li>
+        </ul>
         <p>Version 1.2.3</p>
         <ul>
             <li>Feature: Safe Passwords for Basic Authentication in Password Manager instead of clear text</li>

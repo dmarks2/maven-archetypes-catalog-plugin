@@ -7,7 +7,7 @@ This plugin for IntelliJ IDEA allows you to define a list of external Maven Arch
 fetched and the containing Maven Archetypes are made available in IntelliJ IDEA when creating new Maven projects.
 
 Usage
------AnArchetypeCatalogFactoryUtil
+-----
 
 Install the plugin.
 
@@ -55,7 +55,7 @@ The Interface is available in a JFrog Bintray repository. To use it, add the fol
                 <dependency>
                   <groupId>de.dm.intellij</groupId>
                   <artifactId>maven-archetypes-catalog-openapi</artifactId>
-                  <version>1.2.3</version>
+                  <version>1.2.4</version>
                 </dependency>
             </dependencies>
             ...
