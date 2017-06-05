@@ -23,6 +23,8 @@ When you define a property **archetypeCatalog** in your `pom.xml` or declare a c
 these settings will be automatically imported. The property **archetypeCatalog** supports `local`, `remote`, file- or http(s)-based URLs.
 See [http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html#archetypeCatalog](http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html#archetypeCatalog) for additional information.
 
+By checking the option **Skip Repository Definition** you can suppress the parameter `-DarchetypeRepository` when creating new projects. Be sure to define required repositories in your `settings.xml`.
+Setting this option may help if you are affected by [Maven Archetype / ARCHETYPE-519 - archetype:generate with specified remote archetypeCatalog falls back to internal catalog](https://issues.apache.org/jira/browse/ARCHETYPE-519).
 
 Development
 -----------

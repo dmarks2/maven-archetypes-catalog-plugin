@@ -20,6 +20,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.2.5</p>
+        <ul>
+            <li>Feature: Option to Skip Repository Definitions</li>
+        </ul>
         <p>Version 1.2.4</p>
         <ul>
             <li>Bugfix: Fixed NullPointerException when handling empty Archetype Catalogs</li>

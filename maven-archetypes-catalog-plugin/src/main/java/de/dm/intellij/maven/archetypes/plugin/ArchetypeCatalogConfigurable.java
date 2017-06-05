@@ -9,6 +9,8 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.*;
+import com.intellij.ui.components.JBCheckBox;
+import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
 import de.dm.intellij.maven.archetypes.Util;
 import de.dm.intellij.maven.model.ArchetypeCatalogFactoryUtil;
@@ -38,6 +40,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     private JBTable lstCatalogs;
     private TableModel listModel;
+    private JCheckBox checkboxSkipRepository;
 
     @Nls
     @Override
@@ -157,7 +160,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         JPanel panel = decorator.createPanel();
 
         JPanel component = new JPanel(new BorderLayout());
-        component.setBorder(IdeBorderFactory.createTitledBorder("Archetype Catalogs", false, new Insets(10, 0, 0, 0)));
+        panel.setBorder(IdeBorderFactory.createTitledBorder("Archetype Catalogs", false, new Insets(10, 0, 0, 0)));
         component.add(panel);
 
         final AnActionButton removeButton = ToolbarDecorator.findRemoveButton(component);
@@ -190,6 +193,18 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         });
 
         lstCatalogs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        JPanel options = new JPanel(new BorderLayout());
+        options.setBorder(IdeBorderFactory.createTitledBorder("Options", false, new Insets(10, 0, 0, 0)));
+        component.add(options, BorderLayout.NORTH);
+        checkboxSkipRepository = new JBCheckBox("Skip Repository Definition");
+        checkboxSkipRepository.setSelected(ArchetypeCatalogSettings.getInstance().isSkipRepository());
+
+        JPanel optionsInside = new JPanel(new GridLayout(0,1));
+        optionsInside.add(checkboxSkipRepository);
+        optionsInside.add(new JBLabel("Suppresses -DarchetypeRepository parameter when creating new projects. Be sure to define required repositories in your settings.xml."));
+
+        options.add(optionsInside, BorderLayout.NORTH);
 
         return component;
     }
@@ -236,18 +251,21 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return ((ArchetypeCatalogTableModel)listModel).isModified();
+        return ((ArchetypeCatalogTableModel)listModel).isModified() ||
+                (ArchetypeCatalogSettings.getInstance().isSkipRepository() != checkboxSkipRepository.isSelected());
     }
 
     @Override
     public void apply() throws ConfigurationException {
         Util.saveArchetypeCatalogModels(((ArchetypeCatalogTableModel)listModel).getArchetypeCatalogModels());
+        ArchetypeCatalogSettings.getInstance().setSkipRepository(checkboxSkipRepository.isSelected());
         ((ArchetypeCatalogTableModel)listModel).setModified(false);
     }
 
     @Override
     public void reset() {
         ((ArchetypeCatalogTableModel)listModel).updateArchetypeCatalogModels(Util.getArchetypeCatalogModels());
+        checkboxSkipRepository.setSelected(ArchetypeCatalogSettings.getInstance().isSkipRepository());
     }
 
     @Override

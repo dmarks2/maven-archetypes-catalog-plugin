@@ -21,6 +21,7 @@ import java.util.Set;
 public class ArchetypeCatalogSettings implements PersistentStateComponent<ArchetypeCatalogSettings> {
 
     private Set<String> archetypeCatalogs = new HashSet<String>();
+    private boolean skipRepository;
 
     @NotNull
     public static ArchetypeCatalogSettings getInstance() {
@@ -41,6 +42,14 @@ public class ArchetypeCatalogSettings implements PersistentStateComponent<Archet
         }
     }
 
+    public boolean isSkipRepository() {
+        return skipRepository;
+    }
+
+    public void setSkipRepository(boolean skipRepository) {
+        this.skipRepository = skipRepository;
+    }
+
     @Nullable
     @Override
     public ArchetypeCatalogSettings getState() {
@@ -51,5 +60,6 @@ public class ArchetypeCatalogSettings implements PersistentStateComponent<Archet
     public void loadState(ArchetypeCatalogSettings state) {
         archetypeCatalogs.clear();
         archetypeCatalogs.addAll(state.getUrls());
+        skipRepository = state.isSkipRepository();
     }
 }

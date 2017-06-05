@@ -40,6 +40,8 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
 
         Collection<MavenArchetype> result = new HashSet<MavenArchetype>();
 
+        boolean skipRepository = ArchetypeCatalogSettings.getInstance().isSkipRepository();
+
         for (String url : urls) {
             try {
 
@@ -48,7 +50,7 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
                 if (catalog != null) {
                     if (catalog.getArchetypes() != null) {
                         for (Archetype archetype : catalog.getArchetypes().getArchetype()) {
-                            result.add(new MavenArchetype(archetype.getGroupId(), archetype.getArtifactId(), archetype.getVersion(), archetype.getRepository(), archetype.getDescription()));
+                            result.add(new MavenArchetype(archetype.getGroupId(), archetype.getArtifactId(), archetype.getVersion(), (skipRepository ? null : archetype.getRepository()), archetype.getDescription()));
                         }
                     }
                 }
