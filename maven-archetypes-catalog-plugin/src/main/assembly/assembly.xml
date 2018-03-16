@@ -22,6 +22,10 @@
             <outputDirectory>/${project.artifactId}/lib</outputDirectory>
             <includes>
                 <include>${project.groupId}:maven-archetypes-catalog-openapi:jar</include>
+                <include>javax.xml.bind:jaxb-api:jar</include>
+                <include>com.sun.xml.bind:jaxb-core:jar</include>
+                <include>com.sun.xml.bind:jaxb-impl:jar</include>
+                <include>javax.activation:activation:jar</include>
             </includes>
         </dependencySet>
     </dependencySets>

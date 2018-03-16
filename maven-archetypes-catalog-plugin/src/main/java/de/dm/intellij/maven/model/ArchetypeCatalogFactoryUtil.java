@@ -2,6 +2,7 @@ package de.dm.intellij.maven.model;
 
 import com.intellij.util.Base64;
 import com.intellij.util.net.HttpConfigurable;
+import com.sun.xml.bind.v2.ContextFactory;
 import de.dm.intellij.maven.archetypes.Util;
 import org.apache.maven.archetype.catalog.ArchetypeCatalog;
 import org.apache.maven.archetype.catalog.ObjectFactory;
@@ -59,7 +60,7 @@ public class ArchetypeCatalogFactoryUtil {
     }
 
     private static ArchetypeCatalog getArchetypeCatalog(InputStream inputStream) throws JAXBException, IOException, SAXException {
-        JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
+        JAXBContext jaxbContext = ContextFactory.createContext(new Class[]{ObjectFactory.class}, null);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         xmlFilter.setContentHandler(unmarshaller.getUnmarshallerHandler());
 

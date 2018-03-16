@@ -20,6 +20,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.2.6</p>
+        <ul>
+            <li>Bugfix: Support for running IntelliJ IDEA with a Java 9 runtime environment.</li>
+        </ul>
         <p>Version 1.2.5</p>
         <ul>
             <li>Feature: Option to Skip Repository Definitions</li>
@@ -78,7 +82,7 @@
         </ul>
     ]]></change-notes>
 
-    <idea-version since-build="143"/>
+    <idea-version since-build="145"/>
 
     <depends>org.jetbrains.idea.maven</depends>
 
