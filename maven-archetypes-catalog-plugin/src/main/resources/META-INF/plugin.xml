@@ -20,6 +20,10 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.3.0</p>
+        <ul>
+            <li>Feature: Improved compatibility with IntelliJ IDEA 2018.2 and above.</li>
+        </ul>
         <p>Version 1.2.6</p>
         <ul>
             <li>Bugfix: Support for running IntelliJ IDEA with a Java 9 runtime environment.</li>
@@ -82,9 +86,10 @@
         </ul>
     ]]></change-notes>
 
-    <idea-version since-build="145"/>
+    <idea-version since-build="163"/>
 
     <depends>org.jetbrains.idea.maven</depends>
+    <depends>com.intellij.modules.lang</depends>
 
     <extensionPoints>
         <extensionPoint name="archetypeCatalogDefinition" interface="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogDefinition" />

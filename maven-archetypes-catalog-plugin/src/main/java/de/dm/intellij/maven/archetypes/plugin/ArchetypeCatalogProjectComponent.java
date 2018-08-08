@@ -17,15 +17,8 @@ import java.util.Set;
 @State(
         name = "ArchetypeCatalogProjectComponent",
         storages = {
-                @Storage(
-                        id = "default",
-                        file = StoragePathMacros.PROJECT_FILE
-                ),
-                @Storage(
-                        id = "dir",
-                        file = StoragePathMacros.PROJECT_CONFIG_DIR + "/archetypeCatalog.xml",
-                        scheme = StorageScheme.DIRECTORY_BASED)
-                }
+                @Storage("archetypeCatalog.xml")
+        }
 )
 public class ArchetypeCatalogProjectComponent implements ProjectComponent, PersistentStateComponent<ArchetypeCatalogProjectComponentStateWrapper> {
 

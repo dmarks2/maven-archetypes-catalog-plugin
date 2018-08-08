@@ -1,5 +1,6 @@
 package de.dm.intellij.maven.archetypes;
 
+import com.intellij.credentialStore.CredentialAttributesKt;
 import com.intellij.ide.passwordSafe.PasswordSafe;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.ui.Messages;
@@ -15,7 +16,7 @@ public final class PasswordManager {
                     @Override
                     public void run() {
                         try {
-                            PasswordSafe.getInstance().storePassword(null, PasswordManager.class, key, value);
+                            PasswordSafe.getInstance().setPassword(CredentialAttributesKt.CredentialAttributes(PasswordManager.class, key), value);
                             success = true;
                         } catch (Exception e) {
                             Messages.showErrorDialog("Cannot store password\n" + e.getMessage(), "Error");
@@ -35,7 +36,7 @@ public final class PasswordManager {
                     @Override
                     public void run() {
                         try {
-                            password = PasswordSafe.getInstance().getPassword(null, PasswordManager.class, key);
+                            password = PasswordSafe.getInstance().getPassword(CredentialAttributesKt.CredentialAttributes(PasswordManager.class, key));
                         } catch (Exception e) {
                             Messages.showErrorDialog("Cannot load password\n" + e.getMessage(), "Error");
                         }
