@@ -3,6 +3,7 @@ package de.dm.intellij.maven.archetypes.plugin;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -12,11 +13,14 @@ import com.intellij.ui.*;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
+import com.intellij.util.ui.JBUI;
+import com.intellij.util.ui.UIUtil;
 import de.dm.intellij.maven.archetypes.Util;
 import de.dm.intellij.maven.model.ArchetypeCatalogFactoryUtil;
 import de.dm.intellij.maven.model.ArchetypeCatalogModel;
 import de.dm.intellij.maven.model.ArchetypeCatalogType;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.xml.sax.SAXException;
 
@@ -36,7 +40,7 @@ import java.util.List;
 /**
  * Created by Dominik on 03.10.2015.
  */
-public class ArchetypeCatalogConfigurable implements Configurable {
+public class ArchetypeCatalogConfigurable implements SearchableConfigurable, Configurable.NoScroll {
 
     private JBTable lstCatalogs;
     private TableModel listModel;
@@ -62,8 +66,9 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         lstCatalogs.getEmptyText().setText("No Archetype Catalogs defined");
         lstCatalogs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         lstCatalogs.setDefaultRenderer(Object.class, new ArchetypeCatalogCellRenderer());
-        lstCatalogs.getColumnModel().getColumn(0).setPreferredWidth(400);
-        lstCatalogs.getColumnModel().getColumn(1).setPreferredWidth(100);
+        //lstCatalogs.getColumnModel().getColumn(0).setPreferredWidth(400);
+        //lstCatalogs.getColumnModel().getColumn(1).setPreferredWidth(100);
+        lstCatalogs.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
 
         final ToolbarDecorator decorator = ToolbarDecorator.createDecorator(lstCatalogs);
         decorator.setAddAction(new AnActionButtonRunnable() {
@@ -160,8 +165,9 @@ public class ArchetypeCatalogConfigurable implements Configurable {
         JPanel panel = decorator.createPanel();
 
         JPanel component = new JPanel(new BorderLayout());
+        component.setPreferredSize(JBUI.size(300, 500));
         panel.setBorder(IdeBorderFactory.createTitledBorder("Archetype Catalogs", false, new Insets(10, 0, 0, 0)));
-        component.add(panel);
+        component.add(panel, BorderLayout.CENTER);
 
         final AnActionButton removeButton = ToolbarDecorator.findRemoveButton(component);
         final AnActionButton editButton = ToolbarDecorator.findEditButton(component);
@@ -202,7 +208,7 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
         JPanel optionsInside = new JPanel(new GridLayout(0,1));
         optionsInside.add(checkboxSkipRepository);
-        optionsInside.add(new JBLabel("Suppresses -DarchetypeRepository parameter when creating new projects. Be sure to define required repositories in your settings.xml."));
+        optionsInside.add(new JBLabel("Suppresses -DarchetypeRepository parameter when creating new projects. Be sure to define required repositories in your settings.xml.", UIUtil.ComponentStyle.REGULAR, UIUtil.FontColor.BRIGHTER));
 
         options.add(optionsInside, BorderLayout.NORTH);
 
@@ -287,6 +293,12 @@ public class ArchetypeCatalogConfigurable implements Configurable {
 
     private void deleteRow(int row) {
         ((ArchetypeCatalogTableModel)listModel).removeRow(row);
+    }
+
+    @NotNull
+    @Override
+    public String getId() {
+        return "de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogConfigurable";
     }
 
     private class ArchetypeCatalogTableModel extends AbstractTableModel {
