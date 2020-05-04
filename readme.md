@@ -57,7 +57,7 @@ The Interface is available in a JFrog Bintray repository. To use it, add the fol
                 <dependency>
                   <groupId>de.dm.intellij</groupId>
                   <artifactId>maven-archetypes-catalog-openapi</artifactId>
-                  <version>1.2.6</version>
+                  <version>1.4.0</version>
                 </dependency>
             </dependencies>
             ...

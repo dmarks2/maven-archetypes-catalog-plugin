@@ -1,5 +1,4 @@
-<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin version="2">
+<idea-plugin>
     <id>${project.groupId}.${project.artifactId}</id>
     <name>${project.name}</name>
     <category>Maven 2</category>
@@ -20,6 +19,11 @@
      ]]></description>
 
     <change-notes><![CDATA[
+        <p>Version 1.4.0</p>
+        <ul>
+            <li>Bugfix: Fixed compatibility with IntelliJ IDEA 2020.1 and above.</li>
+            <li>Dropped support for IntelliJ IDEA 2019.2 and below.</li>
+        </ul>
         <p>Version 1.3.0</p>
         <ul>
             <li>Feature: Improved compatibility with IntelliJ IDEA 2018.2 and above.</li>
@@ -88,7 +92,7 @@
         </ul>
     ]]></change-notes>
 
-    <idea-version since-build="163"/>
+    <idea-version since-build="193"/>
 
     <depends>org.jetbrains.idea.maven</depends>
     <depends>com.intellij.modules.lang</depends>
@@ -108,12 +112,6 @@
         <archetypesProvider implementation="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogProvider"/>
         <importer implementation="de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogMavenImporter"/>
     </extensions>
-
-    <application-components>
-        <component>
-            <implementation-class>de.dm.intellij.maven.archetypes.plugin.ArchetypeCatalogApplicationComponent</implementation-class>
-        </component>
-    </application-components>
 
     <project-components>
         <component>

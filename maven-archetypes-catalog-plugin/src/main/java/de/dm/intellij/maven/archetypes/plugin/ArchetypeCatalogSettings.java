@@ -15,7 +15,7 @@ import java.util.Set;
 @State(
         name = "ArchetypeCatalogSettings",
         storages = {
-                @Storage(id = "default", file = StoragePathMacros.APP_CONFIG + "/archetypeCatalogs.xml")
+                @Storage("archetypeCatalogs.xml")
         }
 )
 public class ArchetypeCatalogSettings implements PersistentStateComponent<ArchetypeCatalogSettings> {

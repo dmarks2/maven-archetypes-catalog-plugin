@@ -4,7 +4,7 @@
 
     <groupId>de.dm.intellij</groupId>
     <artifactId>maven-archetypes-catalog-plugin-parent</artifactId>
-    <version>1.3.1-SNAPSHOT</version>
+    <version>1.4.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
@@ -52,11 +52,11 @@
         <archetype.catalog.xsd.file>archetype-catalog-1.0.0.xsd</archetype.catalog.xsd.file>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.6</java.version>
+        <java.version>1.8</java.version>
 
-        <intellij.idea.version>2016.3.3</intellij.idea.version>
-        <intellij.idea.home>C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.3.3</intellij.idea.home>
-        <intellij.idea.sdk.name>IntelliJ IDEA Community Edition IC-163.12024.16</intellij.idea.sdk.name>
+        <intellij.idea.version>2019.2.3</intellij.idea.version>
+        <intellij.idea.home>C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3</intellij.idea.home>
+        <intellij.idea.sdk.name>IntelliJ IDEA IU-193.6911.18</intellij.idea.sdk.name>
 
         <vendor.email>Dominik.Marks@gmx.de</vendor.email>
         <ij.plugin>true</ij.plugin>
@@ -135,16 +135,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>com.googlecode</groupId>
-                <artifactId>maven-idea-plugin</artifactId>
-                <version>1.6.1</version>
-                <configuration>
-                    <jdkName>${intellij.idea.sdk.name}</jdkName>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
     <dependencyManagement>

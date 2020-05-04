@@ -3,8 +3,8 @@
 rem call example
 rem install.cmd "C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.3" 2016.3
 
-if %1== goto help
-if %2== goto help
+if "%1"=="" goto help
+if "%2"=="" goto help
 
 if not exist "%~1\" goto errdir
 
@@ -17,7 +17,11 @@ call mvn install:install-file -Dfile=%1\plugins\maven\lib\maven.jar -DgroupId=or
 call mvn install:install-file -Dfile=%1\plugins\maven\lib\maven-server-api.jar -DgroupId=org.jetbrains.plugins -DartifactId=maven-server-api -Dversion=%2 -Dpackaging=jar
 call mvn install:install-file -Dfile=%1\lib\trove4j.jar -DgroupId=org.jetbrains -DartifactId=trove4j -Dversion=%2 -Dpackaging=jar
 call mvn install:install-file -Dfile=%1\lib\jdom.jar -DgroupId=org.jetbrains -DartifactId=jdom -Dversion=%2 -Dpackaging=jar
-call mvn install:install-file -Dfile=%1\lib\kotlin-runtime.jar -DgroupId=org.jetbrains -DartifactId=kotlin-runtime -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\lib\credential-store.jar -DgroupId=org.jetbrains -DartifactId=credential-store -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\lib\platform-api.jar -DgroupId=org.jetbrains -DartifactId=platform-api -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\lib\platform-util-ui.jar -DgroupId=org.jetbrains -DartifactId=platform-util-ui -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\lib\platform-core-ui.jar -DgroupId=org.jetbrains -DartifactId=platform-core-ui -Dversion=%2 -Dpackaging=jar
+call mvn install:install-file -Dfile=%1\lib\platform-impl.jar -DgroupId=org.jetbrains -DartifactId=platform-impl -Dversion=%2 -Dpackaging=jar
 call mvn install:install-file -Dfile=%1\plugins\properties\lib\properties.jar -DgroupId=org.jetbrains.plugins -DartifactId=properties -Dversion=%2 -Dpackaging=jar
 
 goto fin

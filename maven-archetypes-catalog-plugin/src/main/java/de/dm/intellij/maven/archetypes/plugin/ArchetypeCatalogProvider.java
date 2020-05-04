@@ -66,8 +66,9 @@ public class ArchetypeCatalogProvider implements MavenArchetypesProvider {
     }
 
     private static void handleException(Exception e, String url) {
-        ArchetypeCatalogApplicationComponent.notify("Unable to load Archetype Catalog " + url + ": " + e.getClass().getSimpleName(), NotificationType.WARNING);
-        ArchetypeCatalogApplicationComponent.LOG.warn("Unable to load Archetype Catalog " + url + ": " + e.getClass().getSimpleName());
+        ArchetypeCatalogNotifier archetypeCatalogNotifier = new ArchetypeCatalogNotifier();
+
+        archetypeCatalogNotifier.notify("Unable to load Archetype Catalog " + url + ": " + e.getClass().getSimpleName(), NotificationType.WARNING);
     }
 
 }

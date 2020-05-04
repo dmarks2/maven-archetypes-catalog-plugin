@@ -61,7 +61,9 @@ public abstract class MavenImportingTestCase extends MavenTestCase {
     }
 
     private void doImportProjects(boolean useMaven2, final List<VirtualFile> files, String... profiles) {
-        MavenServerManager.getInstance().setUseMaven2(useMaven2);
+        if (useMaven2) {
+            MavenServerManager.getInstance().setUseMaven2();
+        }
         initProjectsManager(false);
 
         readProjects(files, profiles);
