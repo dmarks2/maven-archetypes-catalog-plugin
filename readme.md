@@ -6,7 +6,7 @@ IntelliJ IDEA is not able to fetch external Maven Archetype Catalog files (arche
 This plugin for IntelliJ IDEA allows you to define a list of external Maven Archetype Catalog files. Those files are
 fetched and the containing Maven Archetypes are made available in IntelliJ IDEA when creating new Maven projects.
 
-** Note: Functionality to manage Archetypes has been integrated in IntelliJ 2022. So this plugin is no longer needed for IntelliJ 2022 and above! **
+**Note: Functionality to manage Archetypes has been integrated in IntelliJ 2022. So this plugin is no longer needed for IntelliJ 2022 and above!**
 
 
 Usage
